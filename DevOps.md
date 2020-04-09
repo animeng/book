@@ -22,6 +22,10 @@
 
 > df
 
+符合人类读写习惯的用法
+
+> df -h ../home
+
 ## Docker常用命令
 
 ## dockerfile使用
