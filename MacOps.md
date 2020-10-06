@@ -36,3 +36,7 @@ command+R进入恢复模式
 ## 查看日志
 
 * 实时输出 `tail -f -10`
+
+## 打开模拟器
+
+``` open -a Simulator ```

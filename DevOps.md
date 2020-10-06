@@ -111,6 +111,16 @@ chmod +x /usr/local/bin/docker-compose
 
  应用到容器时，可进入容器内部使用ifconfig查看容器的网络详情
 
+ #### docker清除命令
+
+* docker container prune 清除已经停止的容器
+
+* docker image prune 清除一些没有构建容器的，无用的镜像
+
+* docker image prune --force --all
+
 ## linux防火墙命令
 
 iptable
+
+## koolshare安装ss
