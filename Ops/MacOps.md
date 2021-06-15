@@ -40,3 +40,16 @@ command+R进入恢复模式
 ## 打开模拟器
 
 ``` open -a Simulator ```
+
+## 常用证书生成
+
+* 转换成pem格式 openssl rsa -in ~/.ssh/id_rsa -outform pem > id_rsa.pem
+
+## 查看磁盘
+
+1. 查看磁盘情况
+`diskutil list `
+
+2. 安装smartmontools 检测磁盘寿命
+`brew install smartmontools`
+`smartctl -a disk0`
