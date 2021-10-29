@@ -153,8 +153,6 @@ entrypoint配置，该配置的作用是在容器启动之前做一些初始化�
 
 iptable
 
-## koolshare安装ss
-
 ## githook使用
 
 1. 搭建一个nodejs服务

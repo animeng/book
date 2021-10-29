@@ -8,6 +8,7 @@ This is the summary of mengtnt book.
     * [服务器运维](Ops/DevOps.md)
     * [Mac运维](Ops/MacOps.md)
     * [Flutter运维](Ops/flutterDev.md)
+    * [koolshare运维](Ops/koolshare.md)
 
 * [调试](Ops/Debug.md)
     * [lldb使用](Debug/lldb.md)
