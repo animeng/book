@@ -17,3 +17,5 @@ This is the summary of mengtnt book.
 * [源码管理](PackageManager/Package.md)
     * [git使用](PackageManager/git-use.md)
     * [swiftPackage](PackageManager/swift-package.md)
+
+* [好的文章](Article/JIT-Realize.md)

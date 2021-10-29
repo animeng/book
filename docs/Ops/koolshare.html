@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>iOS崩溃 · GitBook</title>
+        <title>koolshare运维 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../PackageManager/Package.html" />
+    <link rel="next" href="Debug.md" />
     
     
-    <link rel="prev" href="lldb.html" />
+    <link rel="prev" href="flutterDev.html" />
     
 
     </head>
@@ -102,9 +102,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../Ops/Ops.html">
+        <li class="chapter " data-level="1.2" data-path="Ops.html">
             
-                <a href="../Ops/Ops.html">
+                <a href="Ops.html">
             
                     
                     运维
@@ -116,9 +116,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../Ops/DevOps.html">
+        <li class="chapter " data-level="1.2.1" data-path="DevOps.html">
             
-                <a href="../Ops/DevOps.html">
+                <a href="DevOps.html">
             
                     
                     服务器运维
@@ -129,9 +129,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../Ops/MacOps.html">
+        <li class="chapter " data-level="1.2.2" data-path="MacOps.html">
             
-                <a href="../Ops/MacOps.html">
+                <a href="MacOps.html">
             
                     
                     Mac运维
@@ -142,9 +142,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../Ops/flutterDev.html">
+        <li class="chapter " data-level="1.2.3" data-path="flutterDev.html">
             
-                <a href="../Ops/flutterDev.html">
+                <a href="flutterDev.html">
             
                     
                     Flutter运维
@@ -155,9 +155,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../Ops/koolshare.html">
+        <li class="chapter active" data-level="1.2.4" data-path="koolshare.html">
             
-                <a href="../Ops/koolshare.html">
+                <a href="koolshare.html">
             
                     
                     koolshare运维
@@ -173,7 +173,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../Ops/Debug.md">
+        <li class="chapter " data-level="1.3" data-path="Debug.md">
             
                 <span>
             
@@ -187,9 +187,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="lldb.html">
+        <li class="chapter " data-level="1.3.1" data-path="../Debug/lldb.html">
             
-                <a href="lldb.html">
+                <a href="../Debug/lldb.html">
             
                     
                     lldb使用
@@ -200,9 +200,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="ios-crash.html">
+        <li class="chapter " data-level="1.3.2" data-path="../Debug/ios-crash.html">
             
-                <a href="ios-crash.html">
+                <a href="../Debug/ios-crash.html">
             
                     
                     iOS崩溃
@@ -306,7 +306,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >iOS崩溃</a>
+        <a href=".." >koolshare运维</a>
     </h1>
 </div>
 
@@ -321,34 +321,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5D29;&#x6E83;&#x5206;&#x6790;">&#x5D29;&#x6E83;&#x5206;&#x6790;</h1>
-<h2 id="&#x7B26;&#x53F7;&#x89E3;&#x6790;">&#x7B26;&#x53F7;&#x89E3;&#x6790;</h2>
-<p>symbolicatecrash dsym crash.logs&#x4E09;&#x4E2A;&#x653E;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x6B65;&#x9AA4;</p>
-<ol>
-<li><p>export DEVELOPER_DIR=&quot;/Applications/XCode.app/Contents/Developer&quot;</p>
-</li>
-<li><p>./symbolicatecrash -v MyApp-Crash-log.crash MyApp.dSYM &gt; result.log</p>
-</li>
-</ol>
-<p>&#x6216;&#x8005; ./symbolicatecrash 1.crash xxx.app &gt; 1.log</p>
+                                <h1 id="&#x6885;&#x6797;&#x7CFB;&#x7EDF;">&#x6885;&#x6797;&#x7CFB;&#x7EDF;</h1>
+<h2 id="koolshare&#x5B89;&#x88C5;ss">koolshare&#x5B89;&#x88C5;ss</h2>
+<h2 id="&#x66F4;&#x65B0;ss&#x7684;rules">&#x66F4;&#x65B0;ss&#x7684;rules</h2>
+<ul>
+<li>&#x5728;/koolshare/ss/rules &#x8DEF;&#x5F84;&#x4E0B;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x56FD;&#x5185;ip&#x5730;&#x5740;&#x6BB5;</li>
+</ul>
 <blockquote>
-<p>&#x7B26;&#x53F7;&#x89E3;&#x6790;&#x5E93;&#x8DEF;&#x5F84; /Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash</p>
+<p><a href="https://ispip.clang.cn/all_cn.txt" target="_blank">https://ispip.clang.cn/all_cn.txt</a></p>
 </blockquote>
-<h2 id="&#x7CFB;&#x7EDF;&#x7B26;&#x53F7;">&#x7CFB;&#x7EDF;&#x7B26;&#x53F7;</h2>
-<p>&#x7F3A;&#x5C11;&#x7CFB;&#x7EDF;&#x7B26;&#x53F7;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E0B;<code>~/Library/Developer/Xcode/iOS\ DeviceSupport</code>&#x76EE;&#x5F55;&#x4E0B;&#x7CFB;&#x7EDF;&#x7684;&#x5E93;</p>
-<ol>
-<li>&#x7CFB;&#x7EDF;&#x7B26;&#x53F7;&#x8868;&#x4E0B;&#x8F7D;</li>
-</ol>
-<p><a href="https://github.com/Zuikyo/iOS-System-Symbols/blob/master/collected-symbol-files.md" target="_blank">&#x94FE;&#x63A5;</a></p>
-<ol>
-<li>&#x5982;&#x679C;&#x8BBE;&#x5907;&#x4E0D;&#x652F;&#x6301;&#x53EF;&#x4EE5;&#x770B;&#x5982;&#x4E0B;&#x7684;&#x65B9;&#x6CD5;: </li>
-</ol>
-<blockquote>
-<p><a href="https://github.com/iGhibli/iOS-DeviceSupport" target="_blank">&#x53C2;&#x8003;&#x8D44;&#x6599;</a></p>
-</blockquote>
-<p>&#x653E;&#x7F6E;./deploy&#x6587;&#x4EF6;&#x5230;<code>/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform</code> &#x7136;&#x540E;&#x4E0B;&#x8F7D;&#x76F8;&#x5E94;&#x7684;&#x7B26;&#x53F7;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;<code>./deploy.py</code> &#x52A0;&#x8F7D;&#x7B26;&#x53F7;</p>
-<h2 id="&#x624B;&#x52A8;&#x89E3;&#x6790;">&#x624B;&#x52A8;&#x89E3;&#x6790;</h2>
-<p>atos -o /Users/munger/Library/Developer/Xcode/iOS\ DeviceSupport/14.4.2\ (18D70)/Symbols/System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore -arch arm64 -l 0x000000018c16f000 0x000000018cca2874</p>
 
                                 
                                 </section>
@@ -376,12 +357,12 @@
 
             
                 
-                <a href="lldb.html" class="navigation navigation-prev " aria-label="Previous page: lldb使用">
+                <a href="flutterDev.html" class="navigation navigation-prev " aria-label="Previous page: Flutter运维">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../PackageManager/Package.html" class="navigation navigation-next " aria-label="Next page: 源码管理">
+                <a href="Debug.md" class="navigation navigation-next " aria-label="Next page: 调试">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -392,7 +373,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"iOS崩溃","level":"1.3.2","depth":2,"next":{"title":"源码管理","level":"1.4","depth":1,"path":"PackageManager/Package.md","ref":"PackageManager/Package.md","articles":[{"title":"git使用","level":"1.4.1","depth":2,"path":"PackageManager/git-use.md","ref":"PackageManager/git-use.md","articles":[]},{"title":"swiftPackage","level":"1.4.2","depth":2,"path":"PackageManager/swift-package.md","ref":"PackageManager/swift-package.md","articles":[]}]},"previous":{"title":"lldb使用","level":"1.3.1","depth":2,"path":"Debug/lldb.md","ref":"Debug/lldb.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Debug/ios-crash.md","mtime":"2021-04-06T10:49:41.965Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-29T08:50:16.564Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"koolshare运维","level":"1.2.4","depth":2,"next":{"title":"调试","level":"1.3","depth":1,"path":"Ops/Debug.md","ref":"Ops/Debug.md","articles":[{"title":"lldb使用","level":"1.3.1","depth":2,"path":"Debug/lldb.md","ref":"Debug/lldb.md","articles":[]},{"title":"iOS崩溃","level":"1.3.2","depth":2,"path":"Debug/ios-crash.md","ref":"Debug/ios-crash.md","articles":[]}]},"previous":{"title":"Flutter运维","level":"1.2.3","depth":2,"path":"Ops/flutterDev.md","ref":"Ops/flutterDev.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Ops/koolshare.md","mtime":"2021-10-08T15:51:18.451Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-10-29T08:50:16.564Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
