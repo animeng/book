@@ -8,4 +8,10 @@
 
 > https://ispip.clang.cn/all_cn.txt
 
+## 磁盘满了
+
+```du -h ```
+
+移除nc文件夹下的日志。
+
 
