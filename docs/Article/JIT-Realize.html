@@ -1,0 +1,551 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>JIT简单实现 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="Article.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Ops/Ops.html">
+            
+                <a href="../Ops/Ops.html">
+            
+                    
+                    运维
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Ops/DevOps.html">
+            
+                <a href="../Ops/DevOps.html">
+            
+                    
+                    服务器运维
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Ops/MacOps.html">
+            
+                <a href="../Ops/MacOps.html">
+            
+                    
+                    Mac运维
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Ops/flutterDev.html">
+            
+                <a href="../Ops/flutterDev.html">
+            
+                    
+                    Flutter运维
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Ops/koolshare.html">
+            
+                <a href="../Ops/koolshare.html">
+            
+                    
+                    koolshare运维
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Ops/Debug.md">
+            
+                <span>
+            
+                    
+                    调试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Debug/lldb.html">
+            
+                <a href="../Debug/lldb.html">
+            
+                    
+                    lldb使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Debug/ios-crash.html">
+            
+                <a href="../Debug/ios-crash.html">
+            
+                    
+                    iOS崩溃
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../PackageManager/Package.html">
+            
+                <a href="../PackageManager/Package.html">
+            
+                    
+                    源码管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../PackageManager/git-use.html">
+            
+                <a href="../PackageManager/git-use.html">
+            
+                    
+                    git使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../PackageManager/swift-package.html">
+            
+                <a href="../PackageManager/swift-package.html">
+            
+                    
+                    swiftPackage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Article.html">
+            
+                <a href="Article.html">
+            
+                    
+                    好的文章
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="JIT-Realize.html">
+            
+                <a href="JIT-Realize.html">
+            
+                    
+                    JIT简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >JIT简单实现</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="jit&#x7B80;&#x5355;&#x5B9E;&#x73B0;">JIT&#x7B80;&#x5355;&#x5B9E;&#x73B0;</h1>
+<p>JIT = just in time ,&#x7B80;&#x5355;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x52A8;&#x6001;&#x7F16;&#x8BD1;&#x3002;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x5728;&#x5B83;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;&#x521B;&#x5EFA;&#x5E76;&#x4E14;&#x8FD0;&#x884C;&#x4E86;&#x5168;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x800C;&#x5E76;&#x975E;&#x90A3;&#x4E9B;&#x6700;&#x521D;&#x4F5C;&#x4E3A;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x4FDD;&#x5B58;&#x5728;&#x786C;&#x76D8;&#x4E0A;&#x7684;&#x56FA;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x5176;&#x5B9E;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x6982;&#x5FF5;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x52A8;&#x6001;&#x751F;&#x6210;&#x4EE3;&#x7801;&#xFF0C;&#x518D;&#x4E00;&#x4E2A;&#x662F;&#x52A8;&#x6001;&#x8FD0;&#x884C;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x90FD;&#x77E5;&#x9053;&#xFF0C;&#x8BA1;&#x7B97;&#x673A;&#x8FD0;&#x884C;&#x7684;&#x90FD;&#x662F;&#x673A;&#x5668;&#x7801;&#xFF0C;&#x800C;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x7684;&#x5168;&#x79F0;&#x5E94;&#x8BE5;&#x662F;&#x201C;&#x673A;&#x5668;&#x7801;&#x6CE8;&#x8BB0;&#x8BED;&#x8A00;&#x201D;&#xFF0C;&#x6BCF;&#x4E00;&#x6761;&#x6C47;&#x7F16;&#x90FD;&#x5BF9;&#x5E94;&#x4E00;&#x4E32;&#x673A;&#x5668;&#x7801;&#x3002;&#x800C;JIT&#x7684;&#x539F;&#x7406;&#x5C31;&#x662F;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x751F;&#x6210;&#x548C;&#x8FD0;&#x884C;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x751F;&#x6210;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x662F;&#x7F16;&#x8BD1;&#x5668;&#x5E72;&#x7684;&#xFF0C;&#x5F53;&#x7136;&#x624B;&#x52A8;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x800C;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x8FD0;&#x884C;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x5219;&#x662F;&#x4F9D;&#x8D56;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x7684;mmap syscall&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x6C42;&#x548C;&#x7684;&#x673A;&#x5668;&#x7801;</p>
+<pre><code class="lang-c">
+<span class="hljs-comment">//&#x6C42;&#x548C;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">long</span> num)</span> </span>{ <span class="hljs-keyword">return</span> num + <span class="hljs-number">2</span>; }
+<span class="hljs-comment">//&#x5BF9;&#x5E94;&#x673A;&#x5668;&#x7801;</span>
+<span class="hljs-number">0x55</span>,<span class="hljs-number">0x48</span>,<span class="hljs-number">0x89</span>,<span class="hljs-number">0xe5</span>,<span class="hljs-number">0x48</span>,<span class="hljs-number">0x89</span>,<span class="hljs-number">0x7d</span>,<span class="hljs-number">0xf8</span>,<span class="hljs-number">0x48</span>,<span class="hljs-number">0x8b</span>,<span class="hljs-number">0x45</span>,<span class="hljs-number">0xf8</span>,
+, <span class="hljs-number">0x83</span>, <span class="hljs-number">0xc0</span>, <span class="hljs-number">0x02</span>,<span class="hljs-number">0x5d</span>,<span class="hljs-number">0xc3</span>
+</code></pre>
+<p>&#x52A8;&#x6001;&#x5730;&#x5728;&#x5185;&#x5B58;&#x4E0A;&#x521B;&#x5EFA;&#x51FD;&#x6570;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x5185;&#x5B58;&#x4E0A;&#x5206;&#x914D;&#x7A7A;&#x95F4;&#x3002;&#x5177;&#x4F53;&#x5230;&#x6A21;&#x62DF;&#x52A8;&#x6001;&#x521B;&#x5EFA;&#x51FD;&#x6570;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x5C06;&#x5BF9;&#x5E94;&#x7684;&#x673A;&#x5668;&#x7801;&#x6620;&#x5C04;&#x5230;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x4E2D;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;c&#x8BED;&#x8A00;&#xFF0C;&#x5229;&#x7528; mmap&#x51FD;&#x6570;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x70B9;&#x3002;&#x800C;mmap&#x51FD;&#x6570;&#x7684;&#x5E95;&#x5C42;&#x5C31;&#x662F;&#x5BF9;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;mmap syscall&#x7684;&#x4E00;&#x4E2A;&#x5C01;&#x88C5;&#x3002;</p>
+<pre><code class="lang-c">&#x5934;&#x6587;&#x4EF6;&#xFF1A;<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;unistd.h&gt;</span>    #<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sys/mman.h&gt;</span></span>
+
+<span class="hljs-comment">// &#x5B9A;&#x4E49;&#x51FD;&#x6570;&#xFF1A;void *mmap(void *start, size_t length, int prot, int flags, int fd, off_t offsize);</span>
+
+<span class="hljs-comment">// &#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</span>
+<span class="hljs-comment">// &#x53C2;&#x6570;     &#x8BF4;&#x660E;</span>
+<span class="hljs-comment">// start     &#x6307;&#x5411;&#x6B32;&#x5BF9;&#x5E94;&#x7684;&#x5185;&#x5B58;&#x8D77;&#x59CB;&#x5730;&#x5740;&#xFF0C;&#x901A;&#x5E38;&#x8BBE;&#x4E3A;NULL&#xFF0C;&#x4EE3;&#x8868;&#x8BA9;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x9009;&#x5B9A;&#x5730;&#x5740;&#xFF0C;&#x5BF9;&#x5E94;&#x6210;&#x529F;&#x540E;&#x8BE5;&#x5730;&#x5740;&#x4F1A;&#x8FD4;&#x56DE;&#x3002;</span>
+<span class="hljs-comment">// length     &#x4EE3;&#x8868;&#x5C06;&#x6587;&#x4EF6;&#x4E2D;&#x591A;&#x5927;&#x7684;&#x90E8;&#x5206;&#x5BF9;&#x5E94;&#x5230;&#x5185;&#x5B58;&#x3002;</span>
+
+<span class="hljs-comment">// &#x5176;&#x4E2D;&#xFF0C;prot &#x4EE3;&#x8868;&#x6620;&#x5C04;&#x533A;&#x57DF;&#x7684;&#x4FDD;&#x62A4;&#x65B9;&#x5F0F;&#xFF0C;&#x6709;&#x4E0B;&#x5217;&#x7EC4;&#x5408;</span>
+<span class="hljs-comment">//     PROT_EXEC  &#x6620;&#x5C04;&#x533A;&#x57DF;&#x53EF;&#x88AB;&#x6267;&#x884C;&#xFF1B;</span>
+<span class="hljs-comment">//     PROT_READ  &#x6620;&#x5C04;&#x533A;&#x57DF;&#x53EF;&#x88AB;&#x8BFB;&#x53D6;&#xFF1B;</span>
+<span class="hljs-comment">//     PROT_WRITE  &#x6620;&#x5C04;&#x533A;&#x57DF;&#x53EF;&#x88AB;&#x5199;&#x5165;&#xFF1B;</span>
+
+<span class="hljs-comment">// &#x53C2;&#x6570;flags&#xFF1A;&#x5F71;&#x54CD;&#x6620;&#x5C04;&#x533A;&#x57DF;&#x7684;&#x5404;&#x79CD;&#x7279;&#x6027;&#x3002;&#x5728;&#x8C03;&#x7528;mmap()&#x65F6;&#x5FC5;&#x987B;&#x8981;&#x6307;&#x5B9A;MAP_SHARED &#x6216;MAP_PRIVATE</span>
+<span class="hljs-comment">// &#x6211;&#x4EEC;&#x9700;&#x8981;&#x8FD9;&#x5757;&#x4EE3;&#x7801;&#x53EF;&#x8BFB;&#x53EF;&#x6267;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x5757;&#x7A7A;&#x95F4;</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span>                                                                                   </span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;unistd.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sys/mman.h&gt;</span></span>
+
+<span class="hljs-comment">//&#x5206;&#x914D;&#x5185;&#x5B58;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span>* <span class="hljs-title">createSpace</span><span class="hljs-params">(size_t size)</span> </span>{
+    <span class="hljs-keyword">void</span>* ptr = mmap(<span class="hljs-number">0</span>, size,
+            PROT_READ | PROT_WRITE | PROT_EXEC,
+            MAP_PRIVATE | MAP_ANON,
+            <span class="hljs-number">-1</span>, <span class="hljs-number">0</span>);   
+    <span class="hljs-keyword">return</span> ptr;
+}
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BD5;&#x8BD5;&#x628A;&#x201C;&#x53EF;&#x6267;&#x884C;&#x201D;PROT_EXEC&#x6743;&#x9650;&#x53BB;&#x6389;&#xFF0C;&#x770B;&#x770B;&#x7ED3;&#x679C;&#x5982;&#x4F55;&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x83B7;&#x5F97;&#x4E86;&#x4E00;&#x5757;&#x5206;&#x914D;&#x7ED9;&#x6211;&#x4EEC;&#x5B58;&#x653E;&#x4EE3;&#x7801;&#x7684;&#x7A7A;&#x95F4;&#x3002;&#x4E0B;&#x4E00;&#x6B65;&#x5C31;&#x662F;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x5C06;&#x673A;&#x5668;&#x7801;&#x62F7;&#x8D1D;&#x5230;&#x5206;&#x914D;&#x7ED9;&#x6211;&#x4EEC;&#x7684;&#x90A3;&#x5757;&#x7A7A;&#x95F4;&#x4E0A;&#x53BB;&#x3002;&#x4F7F;&#x7528; memcpy &#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-c"><span class="hljs-comment">//&#x5185;&#x5B58;&#x4E2D;&#x521B;&#x5EFA;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">copyCodeToMem</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>* addr)</span> </span>{
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> macCode[] = {
+        <span class="hljs-number">0x55</span>,
+        <span class="hljs-number">0x48</span>,<span class="hljs-number">0x89</span>,<span class="hljs-number">0xe5</span>,
+        <span class="hljs-number">0x48</span>,<span class="hljs-number">0x89</span>,<span class="hljs-number">0x7d</span>,<span class="hljs-number">0xf8</span>,
+        <span class="hljs-number">0x48</span>,<span class="hljs-number">0x8b</span>,<span class="hljs-number">0x45</span>,<span class="hljs-number">0xf8</span>,
+        <span class="hljs-number">0x48</span>, <span class="hljs-number">0x83</span>, <span class="hljs-number">0xc0</span>, <span class="hljs-number">0x02</span>,
+        <span class="hljs-number">0x5d</span>,
+        <span class="hljs-number">0xc3</span> 
+    };
+    <span class="hljs-built_in">memcpy</span>(addr, macCode, <span class="hljs-keyword">sizeof</span>(macCode));
+}
+</code></pre>
+<p>&#x5B8C;&#x6574;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span>                                                                                   </span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;unistd.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sys/mman.h&gt;</span></span>
+
+<span class="hljs-comment">//&#x5206;&#x914D;&#x5185;&#x5B58;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span>* <span class="hljs-title">createSpace</span><span class="hljs-params">(size_t size)</span> </span>{
+    <span class="hljs-keyword">void</span>* ptr = mmap(<span class="hljs-number">0</span>, size,
+            PROT_READ | PROT_WRITE | PROT_EXEC,
+            MAP_PRIVATE | MAP_ANON,
+            <span class="hljs-number">-1</span>, <span class="hljs-number">0</span>);   
+    <span class="hljs-keyword">return</span> ptr;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">long</span> num)</span> </span>{ <span class="hljs-keyword">return</span> num + <span class="hljs-number">2</span>; }
+
+<span class="hljs-comment">//&#x5185;&#x5B58;&#x4E2D;&#x521B;&#x5EFA;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">copyCodeToMem</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>* addr)</span> </span>{
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> macCode[] = {
+        <span class="hljs-number">0x55</span>,
+        <span class="hljs-number">0x48</span>,<span class="hljs-number">0x89</span>,<span class="hljs-number">0xe5</span>,
+        <span class="hljs-number">0x48</span>,<span class="hljs-number">0x89</span>,<span class="hljs-number">0x7d</span>,<span class="hljs-number">0xf8</span>,
+        <span class="hljs-number">0x48</span>,<span class="hljs-number">0x8b</span>,<span class="hljs-number">0x45</span>,<span class="hljs-number">0xf8</span>,
+        <span class="hljs-number">0x48</span>, <span class="hljs-number">0x83</span>, <span class="hljs-number">0xc0</span>, <span class="hljs-number">0x02</span>,
+        <span class="hljs-number">0x5d</span>,
+        <span class="hljs-number">0xc3</span> 
+    };
+    <span class="hljs-built_in">memcpy</span>(addr, macCode, <span class="hljs-keyword">sizeof</span>(macCode));
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span>** argv)</span> </span>{                                                                                              
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">size_t</span> SIZE = <span class="hljs-number">1024</span>;
+    <span class="hljs-function"><span class="hljs-keyword">typedef</span> <span class="hljs-title">long</span> <span class="hljs-params">(*demo)</span><span class="hljs-params">(<span class="hljs-keyword">long</span>)</span></span>;
+    <span class="hljs-keyword">void</span>* addr = createSpace(SIZE);
+    copyCodeToMem(addr);
+    demo d1 = addr;
+    <span class="hljs-keyword">long</span> result = d1(<span class="hljs-number">1</span>);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;result = %ld\n&quot;</span>, result); 
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>&#x7F16;&#x8BD1;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-sh">[root@VM-0-7-centos develop]<span class="hljs-comment"># gcc demo.c</span>
+[root@VM-0-7-centos develop]<span class="hljs-comment"># ./a.out</span>
+result = 3
+</code></pre>
+<p>copyCodeToMem&#x4E2D;&#x7684;&#x8FD9;&#x6BB5;&#x673A;&#x5668;&#x7801;&#x662F;&#x600E;&#x4E48;&#x6765;&#x7684;&#x5462;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x5148;&#x7F16;&#x8BD1;add&#x51FD;&#x6570;&#xFF0C;&#x7136;&#x540E;dump&#x51FA;&#x6765;&#x7684;&#x673A;&#x5668;&#x7801;&#x3002;</p>
+<pre><code class="lang-sh">[root@VM-0-7-centos develop]<span class="hljs-comment">#startaddress=$(nm -n a.out |grep add| awk &apos;{print &quot;0x&quot;$1;exit}&apos;)</span>
+[root@VM-0-7-centos develop]<span class="hljs-comment">#endaddress=$(nm -n a.out |grep -A1 add| awk &apos;{getline;print &quot;0x&quot;$1;exit}&apos;)</span>
+[root@VM-0-7-centos develop]<span class="hljs-comment">#objdump -S a.out --start-address=$startaddress --stop-address=$endaddress</span>
+
+a.out:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000400613 &lt;add&gt;:
+  400613:       55                      push   %rbp
+  400614:       48 89 e5                mov    %rsp,%rbp
+  400617:       48 89 7d f8             mov    %rdi,-0x8(%rbp)
+  40061b:       48 8b 45 f8             mov    -0x8(%rbp),%rax
+  40061f:       48 83 c0 02             add    <span class="hljs-variable">$0x2</span>,%rax
+  400623:       5d                      pop    %rbp
+  400624:       c3                        retq
+</code></pre>
+<p>&#x4E0D;&#x7528;objdump&#x6765;&#x67E5;&#x770B;&#x673A;&#x5668;&#x7801;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;gcc -S&#x6765;&#x751F;&#x6210;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#xFF0C;&#x901A;&#x8FC7;&#x67E5;&#x8868;&#x5F97;&#x65B9;&#x5F0F;&#x5F97;&#x5230;&#x673A;&#x5668;&#x7801;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x67B6;&#x6784;&#x4F53;&#x7CFB;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x8868;&#x3002;</p>
+<h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x771F;&#x5B9E;&#x7684;JIT&#x4E0D;&#x4F1A;&#x53EA;&#x6709;&#x8FD9;&#x4E48;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x662F;&#x57FA;&#x672C;&#x539F;&#x7406;&#x5927;&#x540C;&#x5C0F;&#x5F02;&#xFF0C;&#x5176;&#x91CD;&#x70B9;&#x4E5F;&#x5728;&#x4EE3;&#x7801;&#x7684;&#x52A8;&#x6001;&#x751F;&#x6210;&#x548C;&#x4F18;&#x5316;&#x4E0A;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x52A8;&#x6001;&#x83B7;&#x53D6;&#x4E00;&#x6BB5;&#x7A0B;&#x5E8F;&#x7684;&#x673A;&#x5668;&#x7801;&#x4E5F;&#x4E0D;&#x662F;&#x901A;&#x8FC7;objdump&#x6765;&#x505A;&#x7684;&#xFF0C;&#x73B0;&#x4EE3;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x4ECE;&#x524D;&#x7AEF;&#x5230;&#x540E;&#x7AEF;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x6B65;&#x9AA4;&#x90FD;&#x662F;&#x89E3;&#x8026;&#x7684;&#xFF0C;&#x6BD4;&#x5982;llvm&#x5C31;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x6837;&#x7684;&#x80FD;&#x529B;</p>
+<p>mmap&#x80FD;&#x88AB;&#x7528;&#x6765;&#x52A8;&#x6001;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x6216;&#x6620;&#x5C04;&#x4E00;&#x6BB5;&#x5185;&#x5B58;&#xFF0C;&#x66F4;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x7528;&#x9014;&#x8FD8;&#x662F;&#x6587;&#x4EF6;&#x6620;&#x5C04;&#x5B9E;&#x73B0;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x3002;&#x548C;mmap&#x7C7B;&#x4F3C;&#x7684;memfd_create()&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x5B9E;&#x73B0;&#xFF0C;&#x5219;&#x5E38;&#x88AB;&#x811A;&#x672C;&#x5C0F;&#x5B50;&#x7528;&#x6765;&#x9690;&#x85CF;&#x8FDB;&#x7A0B;&#x6216;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x6267;&#x884C;&#x6728;&#x9A6C;&#x3002;</p>
+<blockquote>
+<p>&#x53C2;&#x8003;: <a href="https://llvm.liuxfe.com/post/6799" target="_blank">https://llvm.liuxfe.com/post/6799</a></p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Article.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 好的文章">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"JIT简单实现","level":"1.5.1","depth":2,"previous":{"title":"好的文章","level":"1.5","depth":1,"path":"Article/Article.md","ref":"Article/Article.md","articles":[{"title":"JIT简单实现","level":"1.5.1","depth":2,"path":"Article/JIT-Realize.md","ref":"Article/JIT-Realize.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Article/JIT-Realize.md","mtime":"2021-11-08T05:47:57.037Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-08T05:56:00.359Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
