@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>koolshare运维 · GitBook</title>
+        <title>调试 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../Debug/Debug.html" />
+    <link rel="next" href="lldb.html" />
     
     
-    <link rel="prev" href="flutterDev.html" />
+    <link rel="prev" href="../Ops/koolshare.html" />
     
 
     </head>
@@ -102,9 +102,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="Ops.html">
+        <li class="chapter " data-level="1.2" data-path="../Ops/Ops.html">
             
-                <a href="Ops.html">
+                <a href="../Ops/Ops.html">
             
                     
                     运维
@@ -116,9 +116,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="DevOps.html">
+        <li class="chapter " data-level="1.2.1" data-path="../Ops/DevOps.html">
             
-                <a href="DevOps.html">
+                <a href="../Ops/DevOps.html">
             
                     
                     服务器运维
@@ -129,9 +129,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="MacOps.html">
+        <li class="chapter " data-level="1.2.2" data-path="../Ops/MacOps.html">
             
-                <a href="MacOps.html">
+                <a href="../Ops/MacOps.html">
             
                     
                     Mac运维
@@ -142,9 +142,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="flutterDev.html">
+        <li class="chapter " data-level="1.2.3" data-path="../Ops/flutterDev.html">
             
-                <a href="flutterDev.html">
+                <a href="../Ops/flutterDev.html">
             
                     
                     Flutter运维
@@ -155,9 +155,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.4" data-path="koolshare.html">
+        <li class="chapter " data-level="1.2.4" data-path="../Ops/koolshare.html">
             
-                <a href="koolshare.html">
+                <a href="../Ops/koolshare.html">
             
                     
                     koolshare运维
@@ -173,9 +173,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../Debug/Debug.html">
+        <li class="chapter active" data-level="1.3" data-path="Debug.html">
             
-                <a href="../Debug/Debug.html">
+                <a href="Debug.html">
             
                     
                     调试
@@ -187,9 +187,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../Debug/lldb.html">
+        <li class="chapter " data-level="1.3.1" data-path="lldb.html">
             
-                <a href="../Debug/lldb.html">
+                <a href="lldb.html">
             
                     
                     lldb使用
@@ -200,9 +200,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../Debug/ios-crash.html">
+        <li class="chapter " data-level="1.3.2" data-path="ios-crash.html">
             
-                <a href="../Debug/ios-crash.html">
+                <a href="ios-crash.html">
             
                     
                     iOS崩溃
@@ -325,7 +325,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >koolshare运维</a>
+        <a href=".." >调试</a>
     </h1>
 </div>
 
@@ -340,25 +340,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x6885;&#x6797;&#x7CFB;&#x7EDF;">&#x6885;&#x6797;&#x7CFB;&#x7EDF;</h1>
-<h2 id="koolshare&#x5B89;&#x88C5;ss">koolshare&#x5B89;&#x88C5;ss</h2>
-<h2 id="&#x66F4;&#x65B0;ss&#x7684;rules">&#x66F4;&#x65B0;ss&#x7684;rules</h2>
+                                <h1 id="&#x8C03;&#x8BD5;">&#x8C03;&#x8BD5;</h1>
 <ul>
-<li>&#x5728;/koolshare/ss/rules &#x8DEF;&#x5F84;&#x4E0B;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x56FD;&#x5185;ip&#x5730;&#x5740;&#x6BB5;</li>
+<li><a href="lldb.html">lldb&#x4F7F;&#x7528;</a></li>
+<li><a href="ios-crash.html">iOS&#x5D29;&#x6E83;</a></li>
 </ul>
-<blockquote>
-<p><a href="https://ispip.clang.cn/all_cn.txt" target="_blank">&#x56FD;&#x5185;ip&#x6BB5;</a></p>
-</blockquote>
-<h2 id="&#x78C1;&#x76D8;&#x6EE1;&#x4E86;">&#x78C1;&#x76D8;&#x6EE1;&#x4E86;</h2>
-<p>&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x51E0;&#x4E2A;&#x6B65;&#x9AA4;&#x68C0;&#x6D4B;</p>
-<ol>
-<li><p><code>df -h</code> &#x67E5;&#x770B;&#x54EA;&#x4E2A;&#x6302;&#x8F7D;&#x7684;&#x78C1;&#x76D8;&#x5DF2;&#x7ECF;&#x6EE1;&#x4E86;</p>
-</li>
-<li><p><code>du -h</code> &#x67E5;&#x770B;&#x5177;&#x4F53;&#x6302;&#x8F7D;&#x76D8;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x627E;&#x51FA;&#x6765;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x3002;</p>
-</li>
-<li><p>&#x79FB;&#x9664;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#xFF0C;koolshare&#x4E2D;&#x4E00;&#x822C;&#x662F;&#xFF0C;&#x79FB;&#x9664;nc&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x7684;&#x65E5;&#x5FD7;&#x548C;&#x4F20;&#x8F93;&#x7684;&#x65E5;&#x5FD7;&#x3002;</p>
-</li>
-</ol>
 
                                 
                                 </section>
@@ -386,12 +372,12 @@
 
             
                 
-                <a href="flutterDev.html" class="navigation navigation-prev " aria-label="Previous page: Flutter运维">
+                <a href="../Ops/koolshare.html" class="navigation navigation-prev " aria-label="Previous page: koolshare运维">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../Debug/Debug.html" class="navigation navigation-next " aria-label="Next page: 调试">
+                <a href="lldb.html" class="navigation navigation-next " aria-label="Next page: lldb使用">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -402,7 +388,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"koolshare运维","level":"1.2.4","depth":2,"next":{"title":"调试","level":"1.3","depth":1,"path":"Debug/Debug.md","ref":"Debug/Debug.md","articles":[{"title":"lldb使用","level":"1.3.1","depth":2,"path":"Debug/lldb.md","ref":"Debug/lldb.md","articles":[]},{"title":"iOS崩溃","level":"1.3.2","depth":2,"path":"Debug/ios-crash.md","ref":"Debug/ios-crash.md","articles":[]}]},"previous":{"title":"Flutter运维","level":"1.2.3","depth":2,"path":"Ops/flutterDev.md","ref":"Ops/flutterDev.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Ops/koolshare.md","mtime":"2021-11-08T05:47:57.038Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-08T06:41:52.258Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"调试","level":"1.3","depth":1,"next":{"title":"lldb使用","level":"1.3.1","depth":2,"path":"Debug/lldb.md","ref":"Debug/lldb.md","articles":[]},"previous":{"title":"koolshare运维","level":"1.2.4","depth":2,"path":"Ops/koolshare.md","ref":"Ops/koolshare.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Debug/Debug.md","mtime":"2021-11-07T04:27:06.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-08T06:41:52.258Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
