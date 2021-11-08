@@ -2,9 +2,9 @@
 
 主要是记录自己开发的一些学习资料
 
-* [gitbook使用](https://zhuanlan.zhihu.com/p/34946169)
+* [mengtnt的gitbook](SUMMARY.md)
 
-## 常见问题
+## 部署gitbook常见问题
 
 ` TypeError: cb.apply is not a function `
 ` TypeError: Cannot read property 'pipes' of undefined `
@@ -32,3 +32,4 @@
 
 ```
 [参考链接](https://mizeri.github.io/2021/04/24/gitbook-cbapply-not-a-function/)
+[gitbook使用](https://zhuanlan.zhihu.com/p/34946169)
