@@ -10,7 +10,7 @@ This is the summary of mengtnt book.
     * [Flutter运维](Ops/flutterDev.md)
     * [koolshare运维](Ops/koolshare.md)
 
-* [调试](Ops/Debug.md)
+* [调试](Debug/Debug.md)
     * [lldb使用](Debug/lldb.md)
     * [iOS崩溃](Debug/ios-crash.md)
 
