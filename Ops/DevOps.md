@@ -23,28 +23,23 @@
 
 ### 3.2 docker使用Mysql
 
-1. 创建mysql服务器
+1. 创建mysql服务器 `docker run -p 3306:3306 --name mysql -v /root/docker/mysql/conf:/etc/my.conf.d -e MYSQL_ROOT_PASSWORD=20200121 -d 3a5e53f63281`
 
-`docker run -p 3306:3306 --name mysql -v /root/docker/mysql/conf:/etc/my.conf.d -e MYSQL_ROOT_PASSWORD=20200121 -d 3a5e53f63281`
+2. 进入容器 `docker exec -it mysql bash`
 
-2. 进入容器
-
-`docker exec -it mysql bash`
-
-3. 登录mysql
-`mysql -u root`
+3. 登录mysql `mysql -u root`
 
 4. 安装mysql管理工具Phpmyadmin
 
-安装`docker pull phpmyadmin/phpmyadmin`
+* 安装`docker pull phpmyadmin/phpmyadmin`
 
-启动`docker run -d --name myadmin --link mysql:mysql -p 8080:8080 phpmyadmin/phpmyadmin`
+* 启动`docker run -d --name myadmin --link mysql:mysql -p 8080:8080 phpmyadmin/phpmyadmin`
 
-* -d - 以后台模式运行
-* --name myadmin - 容器命名为 myadmin, 容器管理时用(启动/停止/重启/查看日志等)
-* --link mysql:mysql - 容器关联, 这里我们关联到之前创建的 mysql 容器, 别名这里设置为 db
-* -p 8080:80 - 端口映射, 本地端口:容器端口, 访问: http://ip:8080
-* phpmyadmin/phpmyadmin - 要初始化的镜像名
+> -d - 以后台模式运行
+> --name myadmin - 容器命名为 myadmin, 容器管理时用(启动/停止/重启/查看日志等)
+> --link mysql:mysql - 容器关联, 这里我们关联到之前创建的 mysql 容器, 别名这里设置为 db
+> -p 8080:80 - 端口映射, 本地端口:容器端口, 访问: http://ip:8080
+> phpmyadmin/phpmyadmin - 要初始化的镜像名
 
 5. mysql创建用户
 
@@ -85,15 +80,16 @@
 可以使用如下命令：`sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories`
 
 5. 通过国内的源下载docker-compose
+
 ```
 curl -L https://get.daocloud.io/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-
 chmod +x /usr/local/bin/docker-compose
+
 ```
 
 ### 3.6 docker常用的命令
 
-1. 使主进程无法结束 `docker run -d '323232' /bin/bash -c "while true;do echo hello docker;sleep 1;done"`
+1. 使主进程无法结束 ` docker run -d '323232' /bin/bash -c "while true;do echo hello docker;sleep 1;done" `
 
 2. 实时查看docker容器日志`$ sudo docker logs -f -t --tail 行数 容器id `
 
@@ -101,26 +97,27 @@ chmod +x /usr/local/bin/docker-compose
 
 * 容器使用的资源 `docker stats` 每隔一秒刷新 `--no-stream` 不刷新
 
-* 查看网络内部信息 `docker network list` `docker network inspect simple-network`
+* 查看网络内部信息 ` docker network list` `docker network inspect simple-network `
 
 * 应用到容器时，可进入容器内部使用ifconfig查看容器的网络详情
 
 4. docker清除命令
 
-* docker container prune 清除已经停止的容器
+* ` docker container prune `清除已经停止的容器
 
-* docker image prune 清除一些没有构建容器的，无用的镜像
+* ` docker image prune `清除一些没有构建容器的，无用的镜像
 
-* docker image prune --force --all
+* `docker image prune --force --all`
 
 5. docker重启
 
-* systemctl restart docker.service 重启所有
-* docker ps -a | grep Exited | awk '{print $1}' |xargs docker start 重启所有的服务
+* ` systemctl restart docker.service ` 重启所有
+* ` docker ps -a | grep Exited | awk '{print $1}' |xargs docker start ` 重启所有的服务
 
 ### 3.7 docker搭建服务器开发环境
 
 1. 安装ruby环境
+
 ``` sh
 FROM ruby
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev
@@ -132,6 +129,7 @@ ADD . /myapp
 ```
 
 2. 安装nodejs
+
 ``` sh
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -152,7 +150,8 @@ RUN  curl -sL https://rpm.nodesource.com/setup_14.x | yum install nodejs
 
 1. 启动容器后，立即exit(0)时的原因如下: 
 
-对比发现 启动正常的镜像：
+* 对比发现 启动正常的镜像：
+
 ```
 
 "Entrypoint": [
@@ -160,14 +159,13 @@ RUN  curl -sL https://rpm.nodesource.com/setup_14.x | yum install nodejs
             ]
 ```
 
-异常的镜像：
+* 异常的镜像：
 
 ```
 "Entrypoint": null
 ```
-原因是容器最后一个进程在容器启动后马上退出，则容器也会退出
 
-entrypoint配置，该配置的作用是在容器启动之前做一些初始化配置，如果没有则容器启动时没有进程，容器也会退出，所以要在`docker-compose.yml` 文件中加上`entrypoint: /docker-entrypoint.sh`即可
+* 原因是容器最后一个进程在容器启动后马上退出，则容器也会退出。entrypoint配置，该配置的作用是在容器启动之前做一些初始化配置，如果没有则容器启动时没有进程，容器也会退出，所以要在`docker-compose.yml` 文件中加上`entrypoint: /docker-entrypoint.sh`即可
 
 ## 4 使用vscode远程桌面
 
