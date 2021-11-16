@@ -8,7 +8,7 @@
 
 可以点击下面的链接编辑源码
 
-* [gitbook源码目录](SUMMARY.md)
+* [gitbook源码目录](https://github.com/animeng/book/blob/master/SUMMARY.md)
 
 ## 部署gitbook常见问题
 
