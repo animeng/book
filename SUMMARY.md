@@ -20,3 +20,4 @@ This is the summary of mengtnt book.
 
 * [好的文章](Article/Article.md)
     * [JIT简单实现](Article/JIT-Realize.md)
+    * [ptrace的DEBUG原理](Article/PtraceDebug.md)
