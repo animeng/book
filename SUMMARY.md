@@ -13,6 +13,7 @@ This is the summary of mengtnt book.
 * [调试](Ops/Debug.md)
     * [lldb使用](Debug/lldb.md)
     * [iOS崩溃](Debug/ios-crash.md)
+    * [iOS有用工具](Debug/ios-util.md)
 
 * [源码管理](PackageManager/Package.md)
     * [git使用](PackageManager/git-use.md)
