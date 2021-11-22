@@ -1,18 +1,19 @@
-## 使用git rebase合并多次commit
+## 1. 使用git rebase合并多次commit
 
+原文作者
 [左鹏飞](https://github.com/zuopf769) 2018.5.2
 
-### 1. 背景
+### 1.1 背景
 
 一个repo通常是由一个team中的多个人共同维护，如果需要增加新feature，那么就是一个feature分支了。由于开发中各种修改，本feature分支多次commit。最后提交master后，会看到乱七八糟的所有增量修改历史。其实对别人来说，我们的改动应该就是增加或者删除，给别人看开发过程的增量反而太乱。于是我们可以将feature分支的提交合并后然后再merge到主干这样看起来就清爽多了。
 
 
 记得知乎上有个帖子提问为啥vue的作者尤大大在开发vue的时候，提交历史能做到如此清爽。[Git commits历史是如何做到如此清爽的? - 知乎](https://www.zhihu.com/question/61283395)
 
-![vue commit log](https://github.com/zuopf769/how_to_use_git/blob/master/images/v2-6351aba6f4b722630d0b3086dcab2927_hd.jpg)
+![vue commit log](https://raw.githubusercontent.com/zuopf769/how_to_use_git/master/images/v2-6351aba6f4b722630d0b3086dcab2927_hd.jpg)
 
 
-### 2. rebase简介
+### 1.2 rebase简介
 
 rebase的作用简要概括为：可以对某一段线性提交历史进行编辑、删除、复制、粘贴；因此，合理使用rebase命令可以使我们的提交历史干净、简洁！
 
@@ -20,7 +21,7 @@ rebase的作用简要概括为：可以对某一段线性提交历史进行编�
 > 不要通过rebase对任何已经提交到公共仓库中的commit进行修改（你自己一个人玩的分支除外）
 
 
-### 3. 反面例子
+### 1.3 反面例子
 
 新建一个repo `rebase-test`；新建开发分支`dev`；在开发分支是`commit`了三次然后`merge`到`master`分支；然后`git log `或者`git log --oneline`；可以发现`dev`分支上的每次`commit `都体现到了`master`上
 
@@ -37,11 +38,11 @@ d2cf1f9 fix: 第一次提交
 > `git log --oneline` 可以一行展现
 
 
-### 4. 具体操作
+### 1.4 具体操作
 
 当我们在本地仓库中提交了多次，在我们把本地提交push到公共仓库中之前，为了让提交记录更简洁明了，我们希望把如下分支B、C、D三个提交记录合并为一个完整的提交，然后再push到公共仓库。
 
-![rebase示意图](https://github.com/zuopf769/how_to_use_git/blob/master/images/2147642-42195cacced56729.png)
+![rebase示意图](https://raw.githubusercontent.com/zuopf769/how_to_use_git/master/images/2147642-42195cacced56729.png)
 
 这里我们使用命令:
 
@@ -65,7 +66,7 @@ git rebase -i HEAD~3
 
 然后我们会看到如下界面:
 
-![rebase示意图](https://github.com/zuopf769/how_to_use_git/blob/master/images/rebase-1.png)
+![rebase示意图](https://raw.githubusercontent.com/zuopf769/how_to_use_git/master/images/rebase-1.png)
 
 上面未被注释的部分列出的是我们本次rebase操作包含的所有提交，下面注释部分是git为我们提供的命令说明。每一个commit id 前面的pick表示指令类型，git 为我们提供了以下几个命令:
 
@@ -96,13 +97,13 @@ git rebase -i HEAD~3
 
 然后`wq`保存退出后是注释修改界面:
 
-![rebase示意图](https://github.com/zuopf769/how_to_use_git/blob/master/images/rebase-3.png)
+![rebase示意图](https://raw.githubusercontent.com/zuopf769/how_to_use_git/master/images/rebase-3.png)
 
 
 > 可以再浏览态 按下两个dd可以删除一行
 
 最终的编辑效果如下：
-![rebase示意图](https://github.com/zuopf769/how_to_use_git/blob/master/images/15_48_34__05_02_2018.jpg)
+![rebase示意图](https://raw.githubusercontent.com/zuopf769/how_to_use_git/master/images/15_48_34__05_02_2018.jpg)
 
 
 编辑完保存即可完成commit的合并了：
@@ -111,18 +112,54 @@ git rebase -i HEAD~3
 
 最后查看`log`可以发下提交合并了
 
-![rebase示意图](https://github.com/zuopf769/how_to_use_git/blob/master/images/15_49_42__05_02_2018.jpg)
+![rebase示意图](https://github.com/zuopf769/how_to_use_git/blob/master/images/15_49_42__05_02_2018.jpg?raw=true)
 
+### 1.5 rebase后的注意事项
 
+官方文档解释: 
 
-## 5. 参考文献
+> In other cases this error is a result of destructive changes made locally by using commands like git commit --amend or git rebase.
+While you can override the remote by adding --force to the push command, you should only do so if you are absolutely certain this is what you want to do.
+Force-pushes can cause issues for other users that have fetched the remote branch, and is considered bad practice. When in doubt, don’t force-push.
+
+rebase后如果想要覆盖原来提交的带有merge的commit，可以使用 ` git push origin --force `方式，强制用本地干净的提交替代远程的提交。
+
+### 1.6 参考文献
 
 [rebase 用法小结](https://www.jianshu.com/p/4a8f4af4e803)
 
-## cherry-pick
+## 2. cherry-pick的使用
 
-## rebase后的注意事项
+从一个分支上获取某个提交，合并到另一分支上，常用方式.
 
-In other cases this error is a result of destructive changes made locally by using commands like git commit --amend or git rebase.
-While you can override the remote by adding --force to the push command, you should only do so if you are absolutely certain this is what you want to do.
-Force-pushes can cause issues for other users that have fetched the remote branch, and is considered bad practice. When in doubt, don’t force-push.
+### 2.1 命令使用
+
+``` git cherry-pick 02fb0a4ef -m 1 ```
+
+* 如果原始提交是一个合并节点，来自于两个分支的合并，那么 Cherry pick 默认将失败，因为它不知道应该采用哪个分支的代码变动。-m配置项告诉 Git，应该采用哪个分支的变动。它的参数parent-number是一个从1开始的整数，代表原始提交的父分支编号。
+
+### 2.2 代码冲突
+如果操作过程中发生代码冲突，Cherry pick 会停下来，让用户决定如何继续操作。
+
+```
+（1）--continue
+```
+
+用户解决代码冲突后，第一步将修改的文件重新加入暂存区（git add .），第二步使用下面的命令，让 Cherry pick 过程继续执行。
+
+``` sh
+$ git cherry-pick --continue
+（2）--abort
+```
+
+发生代码冲突后，放弃合并，回到操作前的样子。
+
+```
+（3）--quit
+```
+
+发生代码冲突后，退出 Cherry pick，但是不回到操作前的样子。
+
+### 2.3 参考文献
+
+[阮一峰日志](https://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)
