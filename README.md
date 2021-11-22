@@ -2,9 +2,15 @@
 
 主要是记录自己开发的一些学习资料
 
-* [gitbook使用](https://zhuanlan.zhihu.com/p/34946169)
+* [mengtnt的gitbook](https://mengtnt.com/book)
 
-## 常见问题
+## 编辑源码
+
+可以点击下面的链接编辑源码
+
+* [gitbook源码目录](https://github.com/animeng/book/blob/master/SUMMARY.md)
+
+## 部署gitbook常见问题
 
 ` TypeError: cb.apply is not a function `
 ` TypeError: Cannot read property 'pipes' of undefined `
@@ -15,7 +21,7 @@
 
 上面的错误统一解决方案是使用4.2.0版本的库 ``` npm install graceful-fs@4.2.0 --save```
 
-[参考链接](https://stackoverflow.com/questions/64211386/gitbook-cli-install-error-typeerror-cb-apply-is-not-a-function-inside-graceful/65840763#65840763)
+> [参考链接](https://stackoverflow.com/questions/64211386/gitbook-cli-install-error-typeerror-cb-apply-is-not-a-function-inside-graceful/65840763#65840763)
 
 * 解决方案2
 
@@ -31,4 +37,8 @@
 //   fs.lstat = statFix(fs.lstat)
 
 ```
-[参考链接](https://mizeri.github.io/2021/04/24/gitbook-cbapply-not-a-function/)
+
+> [参考链接](https://mizeri.github.io/2021/04/24/gitbook-cbapply-not-a-function/)
+
+## 参考
+[gitbook使用](https://zhuanlan.zhihu.com/p/34946169)

@@ -171,9 +171,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="Ops/Debug.md">
+        <li class="chapter " data-level="1.3" data-path="Debug/Debug.html">
             
-                <span>
+                <a href="Debug/Debug.html">
             
                     
                     调试
@@ -272,6 +272,38 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Article/JIT-Realize.html">
+            
+                <a href="Article/JIT-Realize.html">
+            
+                    
+                    JIT简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Article/PtraceDebug.html">
+            
+                <a href="Article/PtraceDebug.html">
+            
+                    
+                    ptrace的DEBUG原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
 
@@ -322,9 +354,14 @@
                                 <h1 id="&#x5F00;&#x53D1;&#x8FD0;&#x7EF4;&#x8D44;&#x6599;">&#x5F00;&#x53D1;&#x8FD0;&#x7EF4;&#x8D44;&#x6599;</h1>
 <p>&#x4E3B;&#x8981;&#x662F;&#x8BB0;&#x5F55;&#x81EA;&#x5DF1;&#x5F00;&#x53D1;&#x7684;&#x4E00;&#x4E9B;&#x5B66;&#x4E60;&#x8D44;&#x6599;</p>
 <ul>
-<li><a href="https://zhuanlan.zhihu.com/p/34946169" target="_blank">gitbook&#x4F7F;&#x7528;</a></li>
+<li><a href="https://mengtnt.com/book" target="_blank">mengtnt&#x7684;gitbook</a></li>
 </ul>
-<h2 id="&#x5E38;&#x89C1;&#x95EE;&#x9898;">&#x5E38;&#x89C1;&#x95EE;&#x9898;</h2>
+<h2 id="&#x7F16;&#x8F91;&#x6E90;&#x7801;">&#x7F16;&#x8F91;&#x6E90;&#x7801;</h2>
+<p>&#x53EF;&#x4EE5;&#x70B9;&#x51FB;&#x4E0B;&#x9762;&#x7684;&#x94FE;&#x63A5;&#x7F16;&#x8F91;&#x6E90;&#x7801;</p>
+<ul>
+<li><a href="https://github.com/animeng/book/blob/master/SUMMARY.md" target="_blank">gitbook&#x6E90;&#x7801;&#x76EE;&#x5F55;</a></li>
+</ul>
+<h2 id="&#x90E8;&#x7F72;gitbook&#x5E38;&#x89C1;&#x95EE;&#x9898;">&#x90E8;&#x7F72;gitbook&#x5E38;&#x89C1;&#x95EE;&#x9898;</h2>
 <p><code>TypeError: cb.apply is not a function</code>
 <code>TypeError: Cannot read property &apos;pipes&apos; of undefined</code></p>
 <p>&#x4E0A;&#x9762;&#x7684;&#x9519;&#x8BEF;&#x662F;&#x56E0;&#x4E3A;gitbook&#x4F7F;&#x7528;&#x7684;graceful-fs&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x7684;&#x5E93;&#x7684;&#x65B9;&#x5F0F;&#x662F;4.2.0&#x7248;&#x672C;&#x7684;&#xFF0C;graceful-fs&#x6700;&#x65B0;&#x7684;&#x7248;&#x672C;&#x5DF2;&#x7ECF;&#x5E9F;&#x5F03;&#x4E86;&#x3002;</p>
@@ -332,7 +369,9 @@
 <li>&#x89E3;&#x51B3;&#x65B9;&#x6848;1</li>
 </ul>
 <p>&#x4E0A;&#x9762;&#x7684;&#x9519;&#x8BEF;&#x7EDF;&#x4E00;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;&#x4F7F;&#x7528;4.2.0&#x7248;&#x672C;&#x7684;&#x5E93; <code>npm install graceful-fs@4.2.0 --save</code></p>
+<blockquote>
 <p><a href="https://stackoverflow.com/questions/64211386/gitbook-cli-install-error-typeerror-cb-apply-is-not-a-function-inside-graceful/65840763#65840763" target="_blank">&#x53C2;&#x8003;&#x94FE;&#x63A5;</a></p>
+</blockquote>
 <ul>
 <li>&#x89E3;&#x51B3;&#x65B9;&#x6848;2</li>
 </ul>
@@ -346,7 +385,11 @@
 <span class="hljs-comment">//   fs.fstat = statFix(fs.fstat)</span>
 <span class="hljs-comment">//   fs.lstat = statFix(fs.lstat)</span>
 </code></pre>
+<blockquote>
 <p><a href="https://mizeri.github.io/2021/04/24/gitbook-cbapply-not-a-function/" target="_blank">&#x53C2;&#x8003;&#x94FE;&#x63A5;</a></p>
+</blockquote>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/34946169" target="_blank">gitbook&#x4F7F;&#x7528;</a></p>
 
                                 
                                 </section>
@@ -386,7 +429,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"介绍","level":"1.1","depth":1,"next":{"title":"运维","level":"1.2","depth":1,"path":"Ops/Ops.md","ref":"Ops/Ops.md","articles":[{"title":"服务器运维","level":"1.2.1","depth":2,"path":"Ops/DevOps.md","ref":"Ops/DevOps.md","articles":[]},{"title":"Mac运维","level":"1.2.2","depth":2,"path":"Ops/MacOps.md","ref":"Ops/MacOps.md","articles":[]},{"title":"Flutter运维","level":"1.2.3","depth":2,"path":"Ops/flutterDev.md","ref":"Ops/flutterDev.md","articles":[]},{"title":"koolshare运维","level":"1.2.4","depth":2,"path":"Ops/koolshare.md","ref":"Ops/koolshare.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2021-11-08T05:47:57.038Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-08T05:48:03.294Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"介绍","level":"1.1","depth":1,"next":{"title":"运维","level":"1.2","depth":1,"path":"Ops/Ops.md","ref":"Ops/Ops.md","articles":[{"title":"服务器运维","level":"1.2.1","depth":2,"path":"Ops/DevOps.md","ref":"Ops/DevOps.md","articles":[]},{"title":"Mac运维","level":"1.2.2","depth":2,"path":"Ops/MacOps.md","ref":"Ops/MacOps.md","articles":[]},{"title":"Flutter运维","level":"1.2.3","depth":2,"path":"Ops/flutterDev.md","ref":"Ops/flutterDev.md","articles":[]},{"title":"koolshare运维","level":"1.2.4","depth":2,"path":"Ops/koolshare.md","ref":"Ops/koolshare.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2021-11-16T08:39:53.911Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-19T03:36:08.465Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

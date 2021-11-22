@@ -173,9 +173,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="Debug.md">
+        <li class="chapter " data-level="1.3" data-path="../Debug/Debug.html">
             
-                <span>
+                <a href="../Debug/Debug.html">
             
                     
                     调试
@@ -274,6 +274,38 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Article/JIT-Realize.html">
+            
+                <a href="../Article/JIT-Realize.html">
+            
+                    
+                    JIT简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Article/PtraceDebug.html">
+            
+                <a href="../Article/PtraceDebug.html">
+            
+                    
+                    ptrace的DEBUG原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
 
@@ -322,76 +354,70 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="devop&#x5E38;&#x7528;&#x547D;&#x4EE4;">DevOp&#x5E38;&#x7528;&#x547D;&#x4EE4;</h1>
-<h2 id="&#x67E5;&#x770B;&#x5E94;&#x7528;&#x7AEF;&#x53E3;&#x4F7F;&#x7528;">&#x67E5;&#x770B;&#x5E94;&#x7528;&#x7AEF;&#x53E3;&#x4F7F;&#x7528;</h2>
-<blockquote>
-<p>lsof -i:3306</p>
-</blockquote>
-<p>&#x8DEF;&#x7531;&#x8868;&#x67E5;&#x770B;</p>
-<blockquote>
-<p>netstat -anp</p>
-</blockquote>
-<p>&#x7F51;&#x7EDC;&#x8D1F;&#x8F7D;&#x67E5;&#x770B;</p>
-<blockquote>
-<p>iftop -P</p>
-</blockquote>
-<p>&#x548C;iftop &#x547D;&#x4EE4;&#x4E00;&#x6837;&#xFF0C;nethodgs&#x4E5F;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;refresh rate&#xFF0C;&#x8FD9;&#x6837;&#x5B83;&#x4F1A;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x5237;&#x65B0;&#x7ED3;&#x679C;&#x3002;&#x4F7F;&#x7528;-d &#x9009;&#x9879;&#x5373;&#x53EF;</p>
-<p><code>nethogs -d 1</code></p>
-<p>&#x6BCF;&#x9694;&#x4E00;&#x79D2;&#x5237;&#x65B0;&#x6D41;&#x91CF;</p>
-<h2 id="&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x5BB9;&#x91CF;">&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x5BB9;&#x91CF;</h2>
-<blockquote>
-<p>df</p>
-</blockquote>
-<p>&#x7B26;&#x5408;&#x4EBA;&#x7C7B;&#x8BFB;&#x5199;&#x4E60;&#x60EF;&#x7684;&#x7528;&#x6CD5;</p>
-<blockquote>
-<p>df -h ../home</p>
-</blockquote>
-<h2 id="docker&#x5E38;&#x7528;&#x547D;&#x4EE4;">Docker&#x5E38;&#x7528;&#x547D;&#x4EE4;</h2>
-<h2 id="dockerfile&#x4F7F;&#x7528;">dockerfile&#x4F7F;&#x7528;</h2>
-<p><a href="https://www.runoob.com/docker/docker-dockerfile.html" target="_blank">https://www.runoob.com/docker/docker-dockerfile.html</a></p>
-<h3 id="mysql&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;">Mysql&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;</h3>
-<h4 id="&#x521B;&#x5EFA;mysql&#x670D;&#x52A1;&#x5668;">&#x521B;&#x5EFA;mysql&#x670D;&#x52A1;&#x5668;</h4>
-<blockquote>
-<p>docker run -p 3306:3306 --name mysql -v /root/docker/mysql/conf:/etc/my.conf.d -e MYSQL_ROOT_PASSWORD=20200121 -d 3a5e53f63281</p>
-</blockquote>
-<h4 id="&#x8FDB;&#x5165;&#x5BB9;&#x5668;">&#x8FDB;&#x5165;&#x5BB9;&#x5668;</h4>
-<blockquote>
-<p>docker exec -it mysql bash</p>
-</blockquote>
-<p>&#x767B;&#x5F55;mysql</p>
-<blockquote>
-<p>mysql -u root</p>
-</blockquote>
-<h4 id="&#x5B89;&#x88C5;mysql&#x7BA1;&#x7406;&#x5DE5;&#x5177;phpmyadmin">&#x5B89;&#x88C5;mysql&#x7BA1;&#x7406;&#x5DE5;&#x5177;Phpmyadmin</h4>
-<p>&#x5B89;&#x88C5;</p>
-<blockquote>
-<p>docker pull phpmyadmin/phpmyadmin</p>
-</blockquote>
-<p>&#x542F;&#x52A8;</p>
-<blockquote>
-<p>docker run -d --name myadmin --link mysql:mysql -p 8080:8080 phpmyadmin/phpmyadmin</p>
-</blockquote>
+<h2 id="1-&#x67E5;&#x770B;&#x7F51;&#x7EDC;&#x76F8;&#x5173;&#x547D;&#x4EE4;">1 &#x67E5;&#x770B;&#x7F51;&#x7EDC;&#x76F8;&#x5173;&#x547D;&#x4EE4;</h2>
 <ul>
-<li>-d - &#x4EE5;&#x540E;&#x53F0;&#x6A21;&#x5F0F;&#x8FD0;&#x884C;</li>
-<li>--name myadmin - &#x5BB9;&#x5668;&#x547D;&#x540D;&#x4E3A; myadmin, &#x5BB9;&#x5668;&#x7BA1;&#x7406;&#x65F6;&#x7528;(&#x542F;&#x52A8;/&#x505C;&#x6B62;/&#x91CD;&#x542F;/&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x7B49;)</li>
-<li>--link mysql:mysql - &#x5BB9;&#x5668;&#x5173;&#x8054;, &#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5173;&#x8054;&#x5230;&#x4E4B;&#x524D;&#x521B;&#x5EFA;&#x7684; mysql &#x5BB9;&#x5668;, &#x522B;&#x540D;&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x4E3A; db</li>
-<li>-p 8080:80 - &#x7AEF;&#x53E3;&#x6620;&#x5C04;, &#x672C;&#x5730;&#x7AEF;&#x53E3;:&#x5BB9;&#x5668;&#x7AEF;&#x53E3;, &#x8BBF;&#x95EE;: <a href="http://ip:8080" target="_blank">http://ip:8080</a></li>
-<li>phpmyadmin/phpmyadmin - &#x8981;&#x521D;&#x59CB;&#x5316;&#x7684;&#x955C;&#x50CF;&#x540D;</li>
+<li>&#x67E5;&#x770B;&#x5E94;&#x7528;&#x7AEF;&#x53E3;&#x4F7F;&#x7528; <code>lsof -i:3306</code></li>
+<li>&#x8DEF;&#x7531;&#x8868;&#x67E5;&#x770B; <code>netstat -anp</code></li>
+<li>&#x7F51;&#x7EDC;&#x8D1F;&#x8F7D;&#x67E5;&#x770B; <code>iftop -P</code></li>
+<li><code>nethogs -d 1</code> &#x548C;iftop &#x547D;&#x4EE4;&#x4E00;&#x6837;&#xFF0C;nethodgs&#x4E5F;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;refresh rate&#xFF0C;&#x8FD9;&#x6837;&#x5B83;&#x4F1A;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x5237;&#x65B0;&#x7ED3;&#x679C;&#x3002;&#x4F7F;&#x7528;-d &#x9009;&#x9879;&#x5373;&#x53EF;&#x6BCF;&#x9694;&#x4E00;&#x79D2;&#x5237;&#x65B0;&#x6D41;&#x91CF;</li>
+<li>linux&#x9632;&#x706B;&#x5899;&#x547D;&#x4EE4; iptable&#x67E5;&#x770B;&#x8DEF;&#x7531;&#x8868;</li>
 </ul>
-<h4 id="mysql&#x521B;&#x5EFA;&#x7528;&#x6237;">mysql&#x521B;&#x5EFA;&#x7528;&#x6237;</h4>
+<h2 id="2-&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x76F8;&#x5173;&#x547D;&#x4EE4;">2 &#x67E5;&#x770B;&#x78C1;&#x76D8;&#x76F8;&#x5173;&#x547D;&#x4EE4;</h2>
+<ul>
+<li>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x6240;&#x6709;&#x78C1;&#x76D8;&#x5BB9;&#x91CF; <code>df</code></li>
+<li>&#x7B26;&#x5408;&#x4EBA;&#x7C7B;&#x8BFB;&#x5199;&#x4E60;&#x60EF;&#x7684;&#x7528;&#x6CD5; <code>df -h ../home</code></li>
+<li>&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x663E;&#x793A;&#x76EE;&#x5F55;&#x6216;&#x6587;&#x4EF6;&#x7684;&#x5927;&#x5C0F; <code>du -h home</code></li>
+</ul>
+<h2 id="3-docker&#x4F7F;&#x7528;">3 Docker&#x4F7F;&#x7528;</h2>
+<h3 id="31-dockerfile&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;">3.1 dockerfile&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;</h3>
+<p><a href="https://www.runoob.com/docker/docker-dockerfile.html" target="_blank">dockerfile&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
+<h3 id="32-docker&#x4F7F;&#x7528;mysql">3.2 docker&#x4F7F;&#x7528;Mysql</h3>
+<ol>
+<li><p>&#x521B;&#x5EFA;mysql&#x670D;&#x52A1;&#x5668; <code>docker run -p 3306:3306 --name mysql -v /root/docker/mysql/conf:/etc/my.conf.d -e MYSQL_ROOT_PASSWORD=20200121 -d 3a5e53f63281</code></p>
+</li>
+<li><p>&#x8FDB;&#x5165;&#x5BB9;&#x5668; <code>docker exec -it mysql bash</code></p>
+</li>
+<li><p>&#x767B;&#x5F55;mysql <code>mysql -u root</code></p>
+</li>
+<li><p>&#x5B89;&#x88C5;mysql&#x7BA1;&#x7406;&#x5DE5;&#x5177;Phpmyadmin</p>
+</li>
+<li><p>&#x5B89;&#x88C5;<code>docker pull phpmyadmin/phpmyadmin</code></p>
+</li>
+<li><p>&#x542F;&#x52A8;<code>docker run -d --name myadmin --link mysql:mysql -p 8080:8080 phpmyadmin/phpmyadmin</code></p>
+</li>
+</ol>
 <blockquote>
-<p>CREATE USER &apos;mengtnt&apos;@&apos;%&apos; IDENTIFIED WITH mysql_native_password BY &apos;&#x5BC6;&#x7801;&apos;</p>
+<p>-d - &#x4EE5;&#x540E;&#x53F0;&#x6A21;&#x5F0F;&#x8FD0;&#x884C;
+--name myadmin - &#x5BB9;&#x5668;&#x547D;&#x540D;&#x4E3A; myadmin, &#x5BB9;&#x5668;&#x7BA1;&#x7406;&#x65F6;&#x7528;(&#x542F;&#x52A8;/&#x505C;&#x6B62;/&#x91CD;&#x542F;/&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x7B49;)
+--link mysql:mysql - &#x5BB9;&#x5668;&#x5173;&#x8054;, &#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5173;&#x8054;&#x5230;&#x4E4B;&#x524D;&#x521B;&#x5EFA;&#x7684; mysql &#x5BB9;&#x5668;, &#x522B;&#x540D;&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x4E3A; db
+-p 8080:80 - &#x7AEF;&#x53E3;&#x6620;&#x5C04;, &#x672C;&#x5730;&#x7AEF;&#x53E3;:&#x5BB9;&#x5668;&#x7AEF;&#x53E3;, &#x8BBF;&#x95EE;: <a href="http://ip:8080" target="_blank">http://ip:8080</a>
+phpmyadmin/phpmyadmin - &#x8981;&#x521D;&#x59CB;&#x5316;&#x7684;&#x955C;&#x50CF;&#x540D;</p>
 </blockquote>
-<p>&#x6388;&#x6743;</p>
-<blockquote>
-<p>GRANT ALL PRIVILEGES ON <em>.</em> TO &apos;mengtnt&apos;@&apos;%&apos;;</p>
-</blockquote>
-<h3 id="&#x5B89;&#x88C5;nginx">&#x5B89;&#x88C5;nginx</h3>
-<p>&#x8FDB;&#x5165;&#x5230;&#x5BB9;&#x5668;&#x4E2D;</p>
-<blockquote>
-<p>docker exec -it &apos;&#x5BB9;&#x5668;id&apos;  /bin/bash </p>
-</blockquote>
-<p>&#x5982;&#x679C;&#x4E0D;&#x884C;&#x6362;&#x6210;/bin/sh</p>
-<h4 id="docker-compose&#x4F7F;&#x7528;"><code>docker-compose</code>&#x4F7F;&#x7528;</h4>
+<ol>
+<li><p>mysql&#x521B;&#x5EFA;&#x7528;&#x6237;</p>
+</li>
+<li><p>&#x521B;&#x5EFA;&#x7528;&#x6237; <code>CREATE USER &apos;mengtnt&apos;@&apos;%&apos; IDENTIFIED WITH mysql_native_password BY &apos;&#x5BC6;&#x7801;&apos;</code></p>
+</li>
+<li><p>&#x6388;&#x6743; <code>GRANT ALL PRIVILEGES ON *.* TO &apos;mengtnt&apos;@&apos;%&apos;;</code></p>
+</li>
+</ol>
+<h3 id="33-&#x5B89;&#x88C5;nginx">3.3 &#x5B89;&#x88C5;nginx</h3>
+<ol>
+<li>&#x4F7F;&#x7528;<code>docker search nginx</code>&#x547D;&#x4EE4;&#x83B7;&#x53D6;ngin&#x955C;&#x50CF;&#x5217;&#x8868;&#x3002;</li>
+<li>&#x4F7F;&#x7528;<code>docker pull nginx</code>&#x547D;&#x4EE4;&#x62C9;&#x53D6;nginx&#x955C;&#x50CF;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x6B64;&#x5904;&#x6211;&#x4EEC;&#x83B7;&#x53D6;&#x6392;&#x540D;&#x7B2C;&#x4E00;&#x7684;&#x662F;&#x5B98;&#x65B9;&#x6700;&#x65B0;&#x955C;&#x50CF;&#xFF0C;&#x5176;&#x5B83;&#x7248;&#x672C;&#x53EF;&#x4EE5;&#x53BB;DockerHub&#x67E5;&#x8BE2;&#x3002;</li>
+<li>&#x4F7F;&#x7528;<code>docker images nginx</code>&#x547D;&#x4EE4;&#xFF0C;&#x67E5;&#x770B;&#x6211;&#x4EEC;&#x62C9;&#x53D6;&#x5230;&#x672C;&#x5730;&#x7684;nginx&#x955C;&#x50CF;IMAGE ID</li>
+<li><p>&#x9996;&#x5148;&#x6D4B;&#x8BD5;&#x4E0B;nginx&#x955C;&#x50CF;&#x662F;&#x5426;&#x53EF;&#x7528;&#xFF0C;&#x4F7F;&#x7528;<code>docker run -d --name mynginx -p 80:80 xxxx</code>&#x521B;&#x5EFA;&#x5E76;&#x542F;&#x52A8;nginx&#x5BB9;&#x5668;</p>
+</li>
+<li><p>-d &#x6307;&#x5B9A;&#x5BB9;&#x5668;&#x4EE5;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x65B9;&#x5F0F;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;</p>
+</li>
+<li>--name &#x6307;&#x5B9A;&#x5BB9;&#x5668;&#x540D;&#x79F0;&#xFF0C;&#x6B64;&#x5904;&#x6211;&#x6307;&#x5B9A;&#x7684;&#x662F;mynginx</li>
+<li>-p &#x6307;&#x5B9A;&#x4E3B;&#x673A;&#x4E0E;&#x5BB9;&#x5668;&#x5185;&#x90E8;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF0C;&#x683C;&#x5F0F; -p  [&#x5BBF;&#x4E3B;&#x673A;&#x7AEF;&#x53E3;&#x53F7;]&#xFF1A;[&#x5BB9;&#x5668;&#x5185;&#x90E8;&#x7AEF;&#x53E3;]&#xFF0C;&#x6B64;&#x5904;&#x6211;&#x4F7F;&#x7528;&#x4E86;&#x4E3B;&#x673A;80&#x7AEF;&#x53E3;&#xFF0C;&#x6620;&#x5C04;&#x5BB9;&#x5668;80&#x7AEF;&#x53E3;</li>
+<li><p>xxxx &#x662F;nginx&#x7684;&#x955C;&#x50CF;IMAGE ID&#x524D;4&#x4F4D;</p>
+</li>
+<li><p>&#x8FDB;&#x5165;&#x5230;&#x5BB9;&#x5668;&#x4E2D; <code>docker exec -it &apos;&#x5BB9;&#x5668;id&apos;  /bin/bash</code> &#x5982;&#x679C;&#x4E0D;&#x884C;&#x6362;&#x6210;/bin/sh</p>
+</li>
+</ol>
+<h3 id="34-docker-compose&#x4F7F;&#x7528;">3.4 <code>docker-compose</code>&#x4F7F;&#x7528;</h3>
 <ul>
 <li><p>&#x8981;&#x8FD0;&#x884C;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#xFF0C; &#x53EA;&#x8981;&#x5728;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x6267;&#x884C; docker-compose up -d &#x547D;&#x4EE4;</p>
 </li>
@@ -400,80 +426,68 @@
 <li><p>To rebuild this image you must use <code>docker-compose build</code> or <code>docker-compose up --build</code></p>
 </li>
 </ul>
-<h4 id="&#x56FD;&#x5185;&#x955C;&#x50CF;&#x89E3;&#x51B3;&#x6162;&#x7684;&#x95EE;&#x9898;">&#x56FD;&#x5185;&#x955C;&#x50CF;&#x89E3;&#x51B3;&#x6162;&#x7684;&#x95EE;&#x9898;</h4>
-<pre><code>curl -L https://get.daocloud.io/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose
-
-chmod +x /usr/local/bin/docker-compose
-</code></pre><ol>
+<h3 id="35-docker&#x56FD;&#x5185;&#x955C;&#x50CF;&#x89E3;&#x51B3;&#x6162;&#x7684;&#x95EE;&#x9898;">3.5 docker&#x56FD;&#x5185;&#x955C;&#x50CF;&#x89E3;&#x51B3;&#x6162;&#x7684;&#x95EE;&#x9898;</h3>
+<ol>
 <li>&#x4FEE;&#x6539; /etc/docker/daemon.json &#x6587;&#x4EF6;&#x7684;&#x955C;&#x50CF;</li>
 <li>sudo systemctl daemon-reload</li>
-<li><p>sudo systemctl restart docker</p>
-</li>
+<li>sudo systemctl restart docker</li>
 <li><p>docker info &#x67E5;&#x770B;&#x6E90;</p>
 </li>
-</ol>
-<blockquote>
-<p>&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5C06; /etc/apk/repositories &#x6587;&#x4EF6;&#x4E2D; Alpine &#x9ED8;&#x8BA4;&#x7684;&#x6E90;&#x5730;&#x5740; <code>http://dl-cdn.alpinelinux.org/</code> &#x66FF;&#x6362;&#x4E3A; <code>http://mirrors.ustc.edu.cn/</code> &#x5373;&#x53EF;
+<li><p>&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5C06; /etc/apk/repositories &#x6587;&#x4EF6;&#x4E2D; Alpine &#x9ED8;&#x8BA4;&#x7684;&#x6E90;&#x5730;&#x5740; <code>http://dl-cdn.alpinelinux.org/</code> &#x66FF;&#x6362;&#x4E3A; <code>http://mirrors.ustc.edu.cn/</code> &#x5373;&#x53EF;
 &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;<code>sed -i &apos;s/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g&apos; /etc/apk/repositories</code></p>
-</blockquote>
-<h4 id="&#x4F7F;&#x4E3B;&#x8FDB;&#x7A0B;&#x65E0;&#x6CD5;&#x7ED3;&#x675F;">&#x4F7F;&#x4E3B;&#x8FDB;&#x7A0B;&#x65E0;&#x6CD5;&#x7ED3;&#x675F;</h4>
-<p><code>docker run -d &apos;323232&apos; /bin/bash -c &quot;while true;do echo hello docker;sleep 1;done&quot;</code></p>
-<h4 id="&#x5B9E;&#x65F6;&#x67E5;&#x770B;docker&#x5BB9;&#x5668;&#x65E5;&#x5FD7;">&#x5B9E;&#x65F6;&#x67E5;&#x770B;docker&#x5BB9;&#x5668;&#x65E5;&#x5FD7;</h4>
-<p><code>$ sudo docker logs -f -t --tail &#x884C;&#x6570; &#x5BB9;&#x5668;id</code></p>
-<h4 id="&#x67E5;&#x770B;docker&#x5BB9;&#x5668;&#x7684;&#x4F7F;&#x7528;&#x60C5;&#x51B5;">&#x67E5;&#x770B;docker&#x5BB9;&#x5668;&#x7684;&#x4F7F;&#x7528;&#x60C5;&#x51B5;</h4>
-<p>&#x5BB9;&#x5668;&#x4F7F;&#x7528;&#x7684;&#x8D44;&#x6E90;</p>
-<blockquote>
-<p><code>docker stats</code> &#x6BCF;&#x9694;&#x4E00;&#x79D2;&#x5237;&#x65B0;</p>
-</blockquote>
-<p><code>--no-stream</code> &#x4E0D;&#x5237;&#x65B0;</p>
-<p>&#x67E5;&#x770B;&#x7F51;&#x7EDC;&#x5185;&#x90E8;&#x4FE1;&#x606F;</p>
-<blockquote>
-<p><code>docker network list</code>
-<code>docker network inspect simple-network</code></p>
-</blockquote>
-<p> &#x5E94;&#x7528;&#x5230;&#x5BB9;&#x5668;&#x65F6;&#xFF0C;&#x53EF;&#x8FDB;&#x5165;&#x5BB9;&#x5668;&#x5185;&#x90E8;&#x4F7F;&#x7528;ifconfig&#x67E5;&#x770B;&#x5BB9;&#x5668;&#x7684;&#x7F51;&#x7EDC;&#x8BE6;&#x60C5;</p>
-<h4 id="docker&#x6E05;&#x9664;&#x547D;&#x4EE4;">docker&#x6E05;&#x9664;&#x547D;&#x4EE4;</h4>
-<ul>
-<li><p>docker container prune &#x6E05;&#x9664;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x7684;&#x5BB9;&#x5668;</p>
 </li>
-<li><p>docker image prune &#x6E05;&#x9664;&#x4E00;&#x4E9B;&#x6CA1;&#x6709;&#x6784;&#x5EFA;&#x5BB9;&#x5668;&#x7684;&#xFF0C;&#x65E0;&#x7528;&#x7684;&#x955C;&#x50CF;</p>
+<li><p>&#x901A;&#x8FC7;&#x56FD;&#x5185;&#x7684;&#x6E90;&#x4E0B;&#x8F7D;docker-compose</p>
 </li>
-<li><p>docker image prune --force --all</p>
-</li>
-</ul>
-<h4 id="docker&#x91CD;&#x542F;">docker&#x91CD;&#x542F;</h4>
-<ol>
-<li>systemctl restart docker.service &#x91CD;&#x542F;&#x6240;&#x6709;</li>
-<li>docker ps -a | grep Exited | awk &apos;{print $1}&apos; |xargs docker start &#x91CD;&#x542F;&#x6240;&#x6709;&#x7684;&#x670D;&#x52A1;</li>
 </ol>
-<h4 id="&#x5E38;&#x89C1;&#x95EE;&#x9898;">&#x5E38;&#x89C1;&#x95EE;&#x9898;</h4>
-<ul>
-<li>&#x542F;&#x52A8;&#x5BB9;&#x5668;&#x540E;&#xFF0C;&#x7ACB;&#x5373;exit(0)&#x65F6;&#x7684;&#x539F;&#x56E0;&#x5982;&#x4E0B;: </li>
-</ul>
-<p>&#x5BF9;&#x6BD4;&#x53D1;&#x73B0; &#x542F;&#x52A8;&#x6B63;&#x5E38;&#x7684;&#x955C;&#x50CF;&#xFF1A;</p>
-<p>&quot;Entrypoint&quot;: [
-                &quot;/docker-entrypoint.sh&quot;
-            ]</p>
-<p>&#x5F02;&#x5E38;&#x7684;&#x955C;&#x50CF;&#xFF1A;</p>
-<p>&quot;Entrypoint&quot;: null,</p>
-<p>&#x539F;&#x56E0;&#x662F;&#x5BB9;&#x5668;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x5728;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x540E;&#x9A6C;&#x4E0A;&#x9000;&#x51FA;&#xFF0C;&#x5219;&#x5BB9;&#x5668;&#x4E5F;&#x4F1A;&#x9000;&#x51FA;</p>
-<p>entrypoint&#x914D;&#x7F6E;&#xFF0C;&#x8BE5;&#x914D;&#x7F6E;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5728;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x4E4B;&#x524D;&#x505A;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x65F6;&#x6CA1;&#x6709;&#x8FDB;&#x7A0B;&#xFF0C;&#x5BB9;&#x5668;&#x4E5F;&#x4F1A;&#x9000;&#x51FA;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x5728;docker-compose.yml &#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x4E0A;  entrypoint: /docker-entrypoint.sh &#x5373;&#x53EF;</p>
-<h2 id="linux&#x9632;&#x706B;&#x5899;&#x547D;&#x4EE4;">linux&#x9632;&#x706B;&#x5899;&#x547D;&#x4EE4;</h2>
-<p>iptable</p>
-<h2 id="githook&#x4F7F;&#x7528;">githook&#x4F7F;&#x7528;</h2>
+<pre><code>curl -L https://get.daocloud.io/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+</code></pre><h3 id="36-docker&#x5E38;&#x7528;&#x7684;&#x547D;&#x4EE4;">3.6 docker&#x5E38;&#x7528;&#x7684;&#x547D;&#x4EE4;</h3>
 <ol>
-<li>&#x642D;&#x5EFA;&#x4E00;&#x4E2A;nodejs&#x670D;&#x52A1;</li>
-<li>&#x4F7F;&#x7528;docker&#x642D;&#x5EFA;ruby&#x670D;&#x52A1;&#x73AF;&#x5883;</li>
-<li>&#x5199;webhook&#x7684;&#x4EE3;&#x7801; <a href="https://docs.github.com/en/developers/webhooks-and-events/about-webhooks" target="_blank">&#x6587;&#x6863;</a></li>
+<li><p>&#x4F7F;&#x4E3B;&#x8FDB;&#x7A0B;&#x65E0;&#x6CD5;&#x7ED3;&#x675F; <code>docker run -d &apos;323232&apos; /bin/bash -c &quot;while true;do echo hello docker;sleep 1;done&quot;</code></p>
+</li>
+<li><p>&#x5B9E;&#x65F6;&#x67E5;&#x770B;docker&#x5BB9;&#x5668;&#x65E5;&#x5FD7;<code>$ sudo docker logs -f -t --tail &#x884C;&#x6570; &#x5BB9;&#x5668;id</code></p>
+</li>
+<li><p>&#x67E5;&#x770B;docker&#x5BB9;&#x5668;&#x7684;&#x4F7F;&#x7528;&#x60C5;&#x51B5;</p>
+</li>
+<li><p>&#x5BB9;&#x5668;&#x4F7F;&#x7528;&#x7684;&#x8D44;&#x6E90; <code>docker stats</code> &#x6BCF;&#x9694;&#x4E00;&#x79D2;&#x5237;&#x65B0; <code>--no-stream</code> &#x4E0D;&#x5237;&#x65B0;</p>
+</li>
+<li><p>&#x67E5;&#x770B;&#x7F51;&#x7EDC;&#x5185;&#x90E8;&#x4FE1;&#x606F; <code>docker network list</code> <code>docker network inspect simple-network</code></p>
+</li>
+<li><p>&#x5E94;&#x7528;&#x5230;&#x5BB9;&#x5668;&#x65F6;&#xFF0C;&#x53EF;&#x8FDB;&#x5165;&#x5BB9;&#x5668;&#x5185;&#x90E8;&#x4F7F;&#x7528;ifconfig&#x67E5;&#x770B;&#x5BB9;&#x5668;&#x7684;&#x7F51;&#x7EDC;&#x8BE6;&#x60C5;</p>
+</li>
+<li><p>docker&#x6E05;&#x9664;&#x547D;&#x4EE4;</p>
+</li>
+<li><p><code>docker container prune</code>&#x6E05;&#x9664;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x7684;&#x5BB9;&#x5668;</p>
+</li>
+<li><p><code>docker image prune</code>&#x6E05;&#x9664;&#x4E00;&#x4E9B;&#x6CA1;&#x6709;&#x6784;&#x5EFA;&#x5BB9;&#x5668;&#x7684;&#xFF0C;&#x65E0;&#x7528;&#x7684;&#x955C;&#x50CF;</p>
+</li>
+<li><p><code>docker image prune --force --all</code></p>
+</li>
+<li><p>docker&#x91CD;&#x542F;</p>
+</li>
+<li><p><code>systemctl restart docker.service</code> &#x91CD;&#x542F;&#x6240;&#x6709;</p>
+</li>
+<li><code>docker ps -a | grep Exited | awk &apos;{print $1}&apos; |xargs docker start</code> &#x91CD;&#x542F;&#x6240;&#x6709;&#x7684;&#x670D;&#x52A1;</li>
 </ol>
-<h3 id="docker&#x642D;&#x5EFA;ruby&#x670D;&#x52A1;&#x73AF;&#x5883;">docker&#x642D;&#x5EFA;ruby&#x670D;&#x52A1;&#x73AF;&#x5883;</h3>
-<ul>
+<h3 id="37-docker&#x642D;&#x5EFA;&#x670D;&#x52A1;&#x5668;&#x5F00;&#x53D1;&#x73AF;&#x5883;">3.7 docker&#x642D;&#x5EFA;&#x670D;&#x52A1;&#x5668;&#x5F00;&#x53D1;&#x73AF;&#x5883;</h3>
+<ol>
+<li>&#x5B89;&#x88C5;ruby&#x73AF;&#x5883;</li>
+</ol>
+<pre><code class="lang-sh">FROM ruby
+RUN apt-get update -qq &amp;&amp; apt-get install -y build-essential libpq-dev
+RUN mkdir /myapp
+WORKDIR /myapp
+ADD Gemfile /myapp/Gemfile
+RUN bundle install
+ADD . /myapp
+</code></pre>
+<ol>
 <li>&#x5B89;&#x88C5;nodejs</li>
-</ul>
-<pre><code class="lang-shell">
-SHELL [&quot;/bin/bash&quot;, &quot;-o&quot;, &quot;pipefail&quot;, &quot;-c&quot;]
+</ol>
+<pre><code class="lang-sh">
+SHELL [<span class="hljs-string">&quot;/bin/bash&quot;</span>, <span class="hljs-string">&quot;-o&quot;</span>, <span class="hljs-string">&quot;pipefail&quot;</span>, <span class="hljs-string">&quot;-c&quot;</span>]
 
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -\
+RUN curl <span class="hljs-_">-s</span>L https://deb.nodesource.com/setup_14.x | bash -\
   &amp;&amp; apt-get update -qq &amp;&amp; apt-get install -qq --no-install-recommends \
     nodejs \
   &amp;&amp; apt-get upgrade -qq \
@@ -481,8 +495,34 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -\
   &amp;&amp; rm -rf /var/lib/apt/lists/*\
   &amp;&amp; npm install -g yarn@1
 
-RUN  curl -sL https://rpm.nodesource.com/setup_14.x | yum install nodejs
+RUN  curl <span class="hljs-_">-s</span>L https://rpm.nodesource.com/setup_14.x | yum install nodejs
 </code></pre>
+<h3 id="38-docker&#x5E38;&#x89C1;&#x95EE;&#x9898;">3.8 docker&#x5E38;&#x89C1;&#x95EE;&#x9898;</h3>
+<ol>
+<li><p>&#x542F;&#x52A8;&#x5BB9;&#x5668;&#x540E;&#xFF0C;&#x7ACB;&#x5373;exit(0)&#x65F6;&#x7684;&#x539F;&#x56E0;&#x5982;&#x4E0B;: </p>
+</li>
+<li><p>&#x5BF9;&#x6BD4;&#x53D1;&#x73B0; &#x542F;&#x52A8;&#x6B63;&#x5E38;&#x7684;&#x955C;&#x50CF;&#xFF1A;</p>
+</li>
+</ol>
+<pre><code>
+&quot;Entrypoint&quot;: [
+                &quot;/docker-entrypoint.sh&quot;
+            ]
+</code></pre><ul>
+<li>&#x5F02;&#x5E38;&#x7684;&#x955C;&#x50CF;&#xFF1A;</li>
+</ul>
+<pre><code>&quot;Entrypoint&quot;: null
+</code></pre><ul>
+<li>&#x539F;&#x56E0;&#x662F;&#x5BB9;&#x5668;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x5728;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x540E;&#x9A6C;&#x4E0A;&#x9000;&#x51FA;&#xFF0C;&#x5219;&#x5BB9;&#x5668;&#x4E5F;&#x4F1A;&#x9000;&#x51FA;&#x3002;entrypoint&#x914D;&#x7F6E;&#xFF0C;&#x8BE5;&#x914D;&#x7F6E;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5728;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x4E4B;&#x524D;&#x505A;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x5316;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x65F6;&#x6CA1;&#x6709;&#x8FDB;&#x7A0B;&#xFF0C;&#x5BB9;&#x5668;&#x4E5F;&#x4F1A;&#x9000;&#x51FA;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x5728;<code>docker-compose.yml</code> &#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x4E0A;<code>entrypoint: /docker-entrypoint.sh</code>&#x5373;&#x53EF;</li>
+</ul>
+<h2 id="4-&#x4F7F;&#x7528;vscode&#x8FDC;&#x7A0B;&#x684C;&#x9762;">4 &#x4F7F;&#x7528;vscode&#x8FDC;&#x7A0B;&#x684C;&#x9762;</h2>
+<p>[remote&#x5B98;&#x65B9;&#x6587;&#x6863;]<a href="https://code.visualstudio.com/docs/remote/remote-overview" target="_blank">https://code.visualstudio.com/docs/remote/remote-overview</a></p>
+<h2 id="5-githook&#x4F7F;&#x7528;">5 githook&#x4F7F;&#x7528;</h2>
+<ol>
+<li>&#x642D;&#x5EFA;&#x4E00;&#x4E2A;nodejs&#x670D;&#x52A1;</li>
+<li>&#x4F7F;&#x7528;docker&#x642D;&#x5EFA;ruby&#x670D;&#x52A1;&#x73AF;&#x5883;</li>
+<li>&#x5199;webhook&#x7684;&#x4EE3;&#x7801; <a href="https://docs.github.com/en/developers/webhooks-and-events/about-webhooks" target="_blank">&#x6587;&#x6863;</a></li>
+</ol>
 
                                 
                                 </section>
@@ -526,7 +566,7 @@ RUN  curl -sL https://rpm.nodesource.com/setup_14.x | yum install nodejs
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"服务器运维","level":"1.2.1","depth":2,"next":{"title":"Mac运维","level":"1.2.2","depth":2,"path":"Ops/MacOps.md","ref":"Ops/MacOps.md","articles":[]},"previous":{"title":"运维","level":"1.2","depth":1,"path":"Ops/Ops.md","ref":"Ops/Ops.md","articles":[{"title":"服务器运维","level":"1.2.1","depth":2,"path":"Ops/DevOps.md","ref":"Ops/DevOps.md","articles":[]},{"title":"Mac运维","level":"1.2.2","depth":2,"path":"Ops/MacOps.md","ref":"Ops/MacOps.md","articles":[]},{"title":"Flutter运维","level":"1.2.3","depth":2,"path":"Ops/flutterDev.md","ref":"Ops/flutterDev.md","articles":[]},{"title":"koolshare运维","level":"1.2.4","depth":2,"path":"Ops/koolshare.md","ref":"Ops/koolshare.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Ops/DevOps.md","mtime":"2021-11-07T04:27:06.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-08T05:48:03.294Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"服务器运维","level":"1.2.1","depth":2,"next":{"title":"Mac运维","level":"1.2.2","depth":2,"path":"Ops/MacOps.md","ref":"Ops/MacOps.md","articles":[]},"previous":{"title":"运维","level":"1.2","depth":1,"path":"Ops/Ops.md","ref":"Ops/Ops.md","articles":[{"title":"服务器运维","level":"1.2.1","depth":2,"path":"Ops/DevOps.md","ref":"Ops/DevOps.md","articles":[]},{"title":"Mac运维","level":"1.2.2","depth":2,"path":"Ops/MacOps.md","ref":"Ops/MacOps.md","articles":[]},{"title":"Flutter运维","level":"1.2.3","depth":2,"path":"Ops/flutterDev.md","ref":"Ops/flutterDev.md","articles":[]},{"title":"koolshare运维","level":"1.2.4","depth":2,"path":"Ops/koolshare.md","ref":"Ops/koolshare.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Ops/DevOps.md","mtime":"2021-11-11T03:44:13.147Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-19T03:36:08.465Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
