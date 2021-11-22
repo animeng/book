@@ -108,11 +108,11 @@ git rebase -i HEAD~3
 
 编辑完保存即可完成commit的合并了：
 
-![rebase示意图](https://github.com/zuopf769/how_to_use_git/blob/master/images/15_49_16__05_02_2018.jpg)
+![rebase示意图](https://raw.githubusercontent.com/zuopf769/how_to_use_git/master/images/15_49_16__05_02_2018.jpg)
 
 最后查看`log`可以发下提交合并了
 
-![rebase示意图](https://github.com/zuopf769/how_to_use_git/blob/master/images/15_49_42__05_02_2018.jpg?raw=true)
+![rebase示意图](https://github.com/zuopf769/how_to_use_git/blob/master/images/15_49_42__05_02_2018.jpg)
 
 ### 1.5 rebase后的注意事项
 
