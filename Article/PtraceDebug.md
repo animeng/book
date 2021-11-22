@@ -129,7 +129,11 @@ svc #0x80
 ```
 
 6、参考资料
+
 > [Linux+ARM64 系统调用](https://blog.csdn.net/liuhangtiant/article/details/85149369)
+
 > [Linux系统调用：使用int 0x80](https://blog.csdn.net/hq815601489/article/details/80009791)
+
 > [用户态和内核态的区别](https://blog.csdn.net/youngyoungla/article/details/53106671)
+
 > [ARM64 汇编——寄存器和指令](https://www.jianshu.com/p/2f4a5f74ac7a)
