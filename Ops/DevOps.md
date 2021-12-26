@@ -176,3 +176,40 @@ RUN  curl -sL https://rpm.nodesource.com/setup_14.x | yum install nodejs
 1. 搭建一个nodejs服务
 2. 使用docker搭建ruby服务环境
 3. 写webhook的代码 [文档](https://docs.github.com/en/developers/webhooks-and-events/about-webhooks)
+
+## 6 部署云原生应用
+
+首先用户权限，需要配置服务器的秘钥对。
+### 6.1 服务器私钥配置
+
+1. 私钥太开放的问题
+```
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "/Users/wanganimeng/.ssh/tencent_rsa": bad permissions
+```
+使用`chmod 600 xxx`修改rsa私钥的权限
+
+2. 服务器开启root用户登陆。
+修改服务器ssh配置，sshd_config的修改方式打开配置文件`vi /etc/ssh/sshd_config`
+
+修改为如下: 
+```
+PermitRootLogin yes
+StrictModes yes
+```
+
+### 6.2 配置git
+
+* 下载git安装`yum install git`
+* 配置git的ssh访问
+* 从github上下载所有的源码
+* 安装所有的docker镜像
+
+### 6.3 修改防火墙的规则
+
+需要修改服务器防火墙的规则，放开端口访问.
+
+### 6.4 修改域名的指向
+
+godaddy域名的A解析
