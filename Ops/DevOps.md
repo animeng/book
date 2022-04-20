@@ -212,4 +212,13 @@ StrictModes yes
 
 ### 6.4 修改域名的指向
 
-godaddy域名的A解析
+godaddy域名的A解析，需要修改服务器防火墙的规则，放开端口访问。
+
+## 7. shell使用
+默认 bash shell。可以使用 zsh。
+
+### 7.1 zsh配置
+
+[zsh使用](https://github.com/ohmyzsh/ohmyzsh/)
+
+* ~/.zshrc 配置选项。
