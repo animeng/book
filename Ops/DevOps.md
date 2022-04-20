@@ -215,10 +215,13 @@ StrictModes yes
 godaddy域名的A解析，需要修改服务器防火墙的规则，放开端口访问。
 
 ## 7. shell使用
-默认 bash shell。可以使用 zsh。
+默认 bash shell，可以使用 zsh。
 
 ### 7.1 zsh配置
 
-[zsh使用](https://github.com/ohmyzsh/ohmyzsh/)
-
+* 查看系统当前的shell ： echo $SHELL.
+* ` brew install zsh `查看bin下是否有zsh包： cat /etc/shells.按照上面的使用链接，安装完成后查看shell列表，返回结果中就会多出 /bin/zsh。
+* 切换shell至zsh： chsh -s /bin/zsh 返回结果就变成：/bin/zsh.
 * ~/.zshrc 配置选项。
+* oh-my-zsh 是一个对 zsh 命令行环境的配置包装框架，它不提供命令行窗口。因为oh-my-zsh源码是放在github上的，所以先要安装git。
+* [ohmyzsh使用](https://github.com/ohmyzsh/ohmyzsh/)
