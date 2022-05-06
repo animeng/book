@@ -26,7 +26,38 @@
 
 * 2017年，孔金珠正式离开军队，成为天津麒麟总裁。
 
-## 又用的资料
+## 有用的资料
 
 * C++学习网站 https://www.learncpp.com/
+
+## 标准monad的实现
+
+``` javascript
+class Result{
+    constructor(Ok, Err){
+        this.Ok = Ok;
+        this.Err = Err;
+    }
+    isOk(){
+        return this.Err === null || this.Err === undefined;
+    }
+    map(fn){
+        return this.isOk() ? Result.of(fn(this.Ok),this.Err) : Result.of(this.Ok, fn(this.Err));
+    }
+    join(){
+        if (this.isOk()) {
+            return this.Ok;
+        }else{
+            return this.Err;
+        }
+    }
+    flatMap(fn){
+        return this.map(fn).join();
+    }
+}
+Result.of = function(Ok, Err){
+    return new Result(Ok, Err);
+}
+
+```
 
