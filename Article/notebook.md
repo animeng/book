@@ -63,3 +63,5 @@ Result.of = function(Ok, Err){
 
 > [lambda演算](https://zh.wikipedia.org/wiki/%CE%9B%E6%BC%94%E7%AE%97)
 
+> [类型推断 Python 实现](https://eli.thegreenplace.net/2018/type-inference/)
+
