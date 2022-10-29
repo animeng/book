@@ -225,3 +225,12 @@ godaddy域名的A解析，需要修改服务器防火墙的规则，放开端口
 * ~/.zshrc 配置选项。
 * oh-my-zsh 是一个对 zsh 命令行环境的配置包装框架，它不提供命令行窗口。因为oh-my-zsh源码是放在github上的，所以先要安装git。
 * [ohmyzsh使用](https://github.com/ohmyzsh/ohmyzsh/)
+
+## 8. 更新证书
+1. 需要去域名网站申请免费证书，然后推送到相应的仓库。
+1. 进入到服务器目录到 `/home/gh-oauth-server` `/home/blogSource ` `/home/webhook` 目录下。
+2. 分别执行 `docker-compose down`后，再执行 `docker-compose up --build -d`命令
+3. 更新服务器证书后可以使用 `curl https://www.animeng.cn:9998/uploadblog -v` `curl https://www.animeng.cn:9999/uploadblog -v` 验证证书的有效性。
+
+> 注意docker-compose down后，再启动不能更新证书，需要 `To rebuild this image you must use docker-compose build or docker-compose up --build -d`
+> `/home/webhook`是给 Book 网站自动build使用，端口9998。`/home/blogSource` 的webhook端口是9999，给blog自动biuld使用。
