@@ -32,6 +32,9 @@ command+R进入恢复模式
     `lsof -i -P`
 * 查看路由表
     `netstat -r`
+    
+* 查看某台服务的端口是否开发
+    `nc -vz -w 2 xxxx 080`
 
 ## 查看日志
 
