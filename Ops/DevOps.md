@@ -234,3 +234,13 @@ godaddy域名的A解析，需要修改服务器防火墙的规则，放开端口
 
 > 注意docker-compose down后，再启动不能更新证书，需要 `To rebuild this image you must use docker-compose build or docker-compose up --build -d`
 > `/home/webhook`是给 Book 网站自动build使用，端口9998。`/home/blogSource` 的webhook端口是9999，给blog自动biuld使用。
+> scp -r /opt/soft/test root@10.6.159.147:/opt/soft/scptest
+
+### 8.1 docker服务启动顺序
+
+1. 首先部署 nginx_mysql_phpadmin
+2. 部署gh-oauth-server，由于database 配置的是ip地址所以要更改ip。
+3. 部署 webhook
+
+* ` brew install zsh `查看bin下是否有zsh包： cat /etc/shells.按照上面的使用链接，安装完成后查看shell列表，返回结果中就会多出 /bin/zsh。q动
+* ` brew install zsh `查看bin下是否有zsh包： cat /etc/shells.按照上面的使用链接，安装完成后查看shell列表，返回结果中就会多出 /bin/zsh。
