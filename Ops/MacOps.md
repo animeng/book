@@ -55,6 +55,8 @@ command+R进入恢复模式
 
 查看当前目录下所有文件大小 `du -d 1 -h`
 
+查看目录磁盘的排序 `du -s * | sort -nr`
+
 2. 安装smartmontools 检测磁盘寿命
 `brew install smartmontools`
 `smartctl -a disk0`
