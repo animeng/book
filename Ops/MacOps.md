@@ -53,6 +53,8 @@ command+R进入恢复模式
 1. 查看磁盘情况
 `diskutil list `
 
+查看当前目录下所有文件大小 `du -d 1 -h`
+
 2. 安装smartmontools 检测磁盘寿命
 `brew install smartmontools`
 `smartctl -a disk0`
