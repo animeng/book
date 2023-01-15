@@ -23,7 +23,7 @@
 
 ### 3.2 docker使用Mysql
 
-1. 创建mysql服务器 `docker run -p 3306:3306 --name mysql -v /root/docker/mysql/conf:/etc/my.conf.d -e MYSQL_ROOT_PASSWORD=20200121 -d 3a5e53f63281`
+1. 创建mysql服务器 `docker run -p 3306:3306 --name mysql -v /root/docker/mysql/conf:/etc/my.conf.d -e MYSQL_ROOT_PASSWORD=xxx -d 3a5e53f63281`
 
 2. 进入容器 `docker exec -it mysql bash`
 
