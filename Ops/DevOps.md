@@ -243,3 +243,6 @@ godaddy域名的A解析，需要修改服务器防火墙的规则，放开端口
 3. 部署 webhook
 
 * ` brew install zsh `查看bin下是否有zsh包： cat /etc/shells.按照上面的使用链接，安装完成后查看shell列表，返回结果中就会多出 /bin/zsh。
+### 8.2 curl 使用
+` curl -d '{"login": "emma", "pass": "123"}' -H 'Content-Type: application/json' https://google.com/login `
+可以验证post请求的合法性。
