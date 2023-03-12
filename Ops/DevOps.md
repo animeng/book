@@ -166,6 +166,7 @@ RUN  curl -sL https://rpm.nodesource.com/setup_14.x | yum install nodejs
 ```
 
 * 原因是容器最后一个进程在容器启动后马上退出，则容器也会退出。entrypoint配置，该配置的作用是在容器启动之前做一些初始化配置，如果没有则容器启动时没有进程，容器也会退出，所以要在`docker-compose.yml` 文件中加上`entrypoint: /docker-entrypoint.sh`即可
+* docker container和宿主互相拷贝文件的命令: `docker cp mycontainerId:/opt/file.txt /opt/file.text`
 
 ## 4 使用vscode远程桌面
 
