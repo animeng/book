@@ -250,3 +250,7 @@ godaddy域名的A解析，需要修改服务器防火墙的规则，放开端口
 
 ### 8.3 ssh 使用
 `ssh mengtnt@localhost -p 5002` 通过ssh代理链接某个端口的服务
+
+### 8.4 cloudflare代理
+
+"docker run -it --name cloudflared_tunnel --detach --network tunnel cloudflare/cloudflared:latest tunnel --no-autoupdate --no-tls-verify run --token xxxxxx"
