@@ -170,7 +170,7 @@ RUN  curl -sL https://rpm.nodesource.com/setup_14.x | yum install nodejs
 
 ## 4 使用vscode远程桌面
 
-[remote官方文档]https://code.visualstudio.com/docs/remote/remote-overview
+[remote官方文档](https://code.visualstudio.com/docs/remote/remote-overview)
 
 ## 5 githook使用
 
